@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Timber Lane Interiors — We Design The Feeling of You</title>
-    <meta name="description"
-        content="Timber Lane Interiors — Luxury interior design studio in Bangalore. We design the feeling of you." />
+    <title>Our Portfolio — Timber Lane Interiors — Luxury Interior Design Studio Bangalore</title>
+    <meta name="description" content="View our gallery of completed luxury interior projects across Bangalore, from serene master suites to modern chef's kitchens." />
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet" />
@@ -23,9 +22,7 @@
             --cream: #FDFBF7;
             --warm: #F2EDE6;
             --logo-orange: #D35400;
-            /* Burnt Orange from Logo */
             --logo-dark: #1A1A1B;
-            /* Charcoal from Logo */
             --brown: #3B2314;
             --mid: #7A6655;
             --light: #B5A898;
@@ -67,17 +64,16 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 22px 48px;
-            background: rgba(242, 237, 230, .94);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(58, 35, 20, .05);
-            transition: background .4s, padding .4s, border-bottom .4s;
+            padding: 14px 48px;
+            background: rgba(242, 237, 230, .98);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(58, 35, 20, .1);
+            transition: all .4s;
         }
 
         nav.solid {
-            background: rgba(242, 237, 230, .98);
-            padding: 14px 48px;
-            border-bottom: 1px solid rgba(58, 35, 20, .1);
+            padding: 12px 48px;
+            background: rgba(242, 237, 230, 1);
         }
 
         .nav-logo {
@@ -105,11 +101,11 @@
             text-transform: uppercase;
             color: rgba(26, 15, 8, .75);
             text-decoration: none;
-            transition: color .3s;
+            transition: color .3s, opacity .3s;
         }
 
         .nav-links a:hover {
-            color: var(--dark);
+            opacity: .6;
         }
 
         .nav-cta {
@@ -410,9 +406,9 @@
             font-size: .6rem;
             letter-spacing: .2em;
             text-transform: uppercase;
-            color: var(--accent);
+            color: var(--brown);
             text-decoration: none;
-            border-bottom: 1px solid var(--accent);
+            border-bottom: 1px solid var(--brown);
             padding-bottom: 2px;
             display: inline-flex;
             align-items: center;
@@ -676,9 +672,9 @@
             font-size: .6rem;
             letter-spacing: .2em;
             text-transform: uppercase;
-            color: var(--accent);
+            color: var(--brown);
             text-decoration: none;
-            border-bottom: 1px solid var(--accent);
+            border-bottom: 1px solid var(--brown);
             padding-bottom: 2px;
             display: inline-flex;
             align-items: center;
@@ -1407,108 +1403,6 @@
                 grid-template-columns: 1fr;
             }
         }
-        /* ── BLOGS SECTION ── */
-        #blogs {
-            padding: 120px 48px;
-            background: var(--cream);
-            border-top: 1px solid rgba(58, 35, 20, .08);
-        }
-
-        .blogs-head {
-            text-align: center;
-            margin-bottom: 64px;
-        }
-
-        .blogs-head h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.2rem, 4vw, 3.5rem);
-            color: var(--dark);
-            margin-bottom: 16px;
-        }
-
-        .blogs-head p {
-            font-size: .9rem;
-            color: var(--mid);
-            max-width: 500px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        .blogs-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-
-        .blog-card {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .blog-card:hover .blog-img img {
-            transform: scale(1.05);
-        }
-
-        .blog-card:hover .blog-title {
-            color: var(--accent);
-        }
-
-        .blog-img {
-            height: 260px;
-            overflow: hidden;
-            margin-bottom: 24px;
-            background: var(--warm);
-        }
-
-        .blog-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform .6s;
-        }
-
-        .blog-meta {
-            font-size: .65rem;
-            text-transform: uppercase;
-            letter-spacing: .15em;
-            color: var(--mid);
-            margin-bottom: 12px;
-            display: block;
-        }
-
-        .blog-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            line-height: 1.4;
-            color: var(--dark);
-            margin-bottom: 16px;
-            transition: color .3s;
-        }
-
-        .blog-link {
-            font-size: .65rem;
-            text-transform: uppercase;
-            letter-spacing: .2em;
-            color: var(--accent);
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        @media (max-width: 900px) {
-            .blogs-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .blogs-grid {
-                grid-template-columns: 1fr;
-            }
-        }
     </style>
 </head>
 
@@ -1519,7 +1413,7 @@
     <!-- NAV -->
     <nav id="nav">
         <a class="nav-logo" href="index.html">
-            <img src="assets/logo.png" alt="Timber Lane Interiors Logo">
+            <img src="assets/logo.png" alt="Timber Lane Logo">
         </a>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
@@ -1552,154 +1446,14 @@
         <a href="contact.html">Contact</a>
     </div>
 
-    <!-- HERO -->
-    <section id="hero">
-        <div class="hero-bg">
-            <div class="hero-bg-left">
-                <img src="assets/hero.png" alt="Luxury interior — living space by Timber Lane" />
-            </div>
-            <div class="hero-bg-right">
-                <img src="assets/bedroom.png" alt="Luxury interior — bedroom by Timber Lane" />
-            </div>
-        </div>
-
-        <div class="hero-content">
-            <p class="hero-eyebrow">Whatever you feel</p>
-            <h1 class="hero-h1">WE DESIGN<br>THE FEELING<br>OF YOU</h1>
-        </div>
-
-        <div class="hero-right-panel">
-            <p>Should guide your new experience, one step at a time, toward your dreamspace living.</p>
-            <a href="#contact" class="hero-btn">GET MY FEELING</a>
-        </div>
+    <!-- PAGE HERO -->
+    <section class="page-hero" style="background: var(--warm); padding: 180px 48px 100px; text-align: center;">
+        <h1 style="font-family: 'Bebas Neue', sans-serif; font-size: clamp(4rem, 10vw, 8rem); line-height: 1; color: var(--dark);">Our Portfolio</h1>
+        <p style="font-size: .8rem; letter-spacing: .3em; text-transform: uppercase; color: var(--accent); margin-top: 16px;">Spaces We've Felt</p>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about">
-        <div class="about-grid">
-            <div class="about-left">
-                <p class="about-tag"><span></span>At Timber Lane Interiors,</p>
-                <h2 class="about-h2 reveal">We believe interior design<br>is more than just aesthetics —<br><em>it's
-                        creating spaces that feel like you.</em></h2>
-                <p class="about-p reveal reveal-d1">We create spaces that inspire, function beautifully, and reflect the
-                    people who live or work in them. Every project is a deeply personal collaboration between our
-                    designers and you.</p>
-                <a href="#process" class="about-link reveal reveal-d2">
-                    Explore Our Process
-                    <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M1 7h12M8 3l4 4-4 4" />
-                    </svg>
-                </a>
-            </div>
-
-            <div class="about-right">
-                <div class="stats-row">
-                    <div class="stat-cell">
-                        <div class="stat-inner">
-                            <p class="stat-label">Years into reimagining spaces — and rewriting the rules of interior
-                                design.</p>
-                            <span class="stat-num reveal">8</span>
-                        </div>
-                    </div>
-                    <div class="stat-cell">
-                        <div class="stat-inner">
-                            <p class="stat-label">Expert designers who know their craft inside and out.</p>
-                            <span class="stat-num reveal">14</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="stats-row">
-                    <div class="stat-cell">
-                        <div class="stat-inner">
-                            <p class="stat-label">Completed projects and countless satisfied clients who trust our work.
-                            </p>
-                            <span class="stat-num reveal">200+</span>
-                        </div>
-                    </div>
-                    <div class="stat-cell dark-cell">
-                        <p class="stat-quote">"Design isn't just what you see — it's how a space lives with you."</p>
-                        <a class="stat-more" href="#portfolio">
-                            Learn more
-                            <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M1 5h8M6 2l3 3-3 3" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="about-img-row">
-            <div class="about-img-pane">
-                <img src="assets/about_1.png" alt="Timber Lane kitchen interior" />
-            </div>
-            <div class="about-img-pane">
-                <img src="assets/about_2.png" alt="Timber Lane bedroom interior" />
-            </div>
-        </div>
-    </section>
-
-    <!-- PROCESS -->
-    <section id="process">
-        <div class="process-head reveal">
-            <h2>What We Do —<br><em>How We Do It</em></h2>
-            <p>A process built around listening first, then creating spaces that feel completely and unmistakably yours.
-            </p>
-        </div>
-        <div class="steps-grid">
-            <div class="step-card reveal">
-                <span class="step-n">01</span>
-                <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" />
-                </svg>
-                <h3 class="step-title">Discovery</h3>
-                <p class="step-desc">We start by listening — understanding your lifestyle, taste, and vision through a
-                    detailed consultation.</p>
-            </div>
-            <div class="step-card reveal reveal-d1">
-                <span class="step-n">02</span>
-                <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <rect x="3" y="3" width="18" height="18" rx="2" />
-                    <path d="M3 9h18M9 21V9" />
-                </svg>
-                <h3 class="step-title">Concept Design</h3>
-                <p class="step-desc">Our designers craft moodboards, spatial layouts, and material palettes tailored
-                    specifically for you.</p>
-            </div>
-            <div class="step-card reveal reveal-d2">
-                <span class="step-n">03</span>
-                <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <polygon
-                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                </svg>
-                <h3 class="step-title">Refinement</h3>
-                <p class="step-desc">We refine every detail together — from furniture selection to custom finishes and
-                    lighting design.</p>
-            </div>
-            <div class="step-card reveal reveal-d3">
-                <span class="step-n">04</span>
-                <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-                    <polyline points="9 22 9 12 15 12 15 22" />
-                </svg>
-                <h3 class="step-title">Execution</h3>
-                <p class="step-desc">We manage the entire build — coordinating craftsmen, timelines, and quality at
-                    every stage.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- PORTFOLIO -->
-    <section id="portfolio">
-        <div class="port-head">
-            <h2 class="reveal">Our Work —<br><em>Spaces We've Felt</em></h2>
-            <a href="#contact" class="port-link reveal reveal-d1">
-                View All Projects
-                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M1 7h12M8 3l4 4-4 4" />
-                </svg>
-            </a>
-        </div>
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio" style="padding: 100px 0;">
         <div class="port-grid">
             <div class="port-card">
                 <img src="assets/portfolio_living.png" alt="Open plan living room" />
@@ -1739,228 +1493,11 @@
         </div>
     </section>
 
-    <!-- PACKAGES -->
-    <section id="packages">
-        <div class="pkg-head">
-            <h2 class="reveal">Curated Design <em>Packages</em></h2>
-            <p class="reveal reveal-d1" style="margin-top:16px; color: rgba(26,15,8,.6);">Tailored interior solutions
-                for the modern Indian home.</p>
-        </div>
-        <div class="pkg-grid">
-            <div class="pkg-card reveal">
-                <h3 class="pkg-name">The Core Home</h3>
-                <p class="pkg-price">Starts at ₹4.5 Lakhs</p>
-                <ul class="pkg-list">
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg> Semi-modular Kitchen</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg> Wardrobes in 2 Bedrooms</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg> Basic False Ceiling (Living & Dining)</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg> Accent Wall Painting</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg> 45-Day Delivery Timeline</li>
-                </ul>
-                <a href="#contact" class="pkg-btn">Inquire Now</a>
-            </div>
-
-            <div class="pkg-card featured reveal reveal-d1">
-                <h3 class="pkg-name">The Premium Home</h3>
-                <p class="pkg-price">Starts at ₹8.5 Lakhs</p>
-                <ul class="pkg-list">
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg> Fully Modular Kitchen (Built-in Appliances)</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg> Premium Wardrobes up to 3 Bedrooms</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg> Comprehensive False Ceiling & Lighting</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg> Custom Fixed Furniture (TV Unit, Bar)</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg> Custom Wallpaper & Textures</li>
-                </ul>
-                <a href="#contact" class="pkg-btn">Book Consultation</a>
-            </div>
-
-            <div class="pkg-card reveal reveal-d2">
-                <h3 class="pkg-name">The Bespoke Villa</h3>
-                <p class="pkg-price">Starts at ₹18 Lakhs+</p>
-                <ul class="pkg-list">
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg> Luxury Chef's Kitchen (Acrylic/Veneer)</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg> Walk-in Closets & Smart Storage</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg> Full Home Automation Integration</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg> End-to-End Furniture & Soft Furnishings</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg> Premium Stonework & Specialized Lighting</li>
-                </ul>
-                <a href="#contact" class="pkg-btn">Inquire Now</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section id="testimonials">
-        <div class="test-head">
-            <p class="test-tag">What Our Clients Say</p>
-            <h2 class="reveal">Spaces They Now <em>Call Home</em></h2>
-        </div>
-        <div class="test-grid">
-            <div class="test-card reveal">
-                <p class="test-stars">★★★★★</p>
-                <p class="test-quote">"Timber Lane didn't just design our home — they listened to who we are and created
-                    a space that fits our soul perfectly."</p>
-                <p class="test-author"><strong>Priya & Arjun Sharma</strong>Whitefield, Bangalore</p>
-            </div>
-            <div class="test-card reveal reveal-d1">
-                <p class="test-stars">★★★★★</p>
-                <p class="test-quote">"The attention to detail was extraordinary. Every finish, every corner told our
-                    story. We couldn't be more thrilled."</p>
-                <p class="test-author"><strong>Anika Mehta</strong>Indiranagar, Bangalore</p>
-            </div>
-            <div class="test-card reveal reveal-d2">
-                <p class="test-stars">★★★★★</p>
-                <p class="test-quote">"Professional, creative, and incredibly patient. The team transformed our 3BHK
-                    into a magazine-worthy home."</p>
-                <p class="test-author"><strong>Ravi & Sunita Nair</strong>Koramangala, Bangalore</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-        <div class="contact-inner">
-            <div class="contact-left reveal">
-                <h2>Start Your<br><em>Design Journey</em></h2>
-                <p>Tell us about your space and your vision. We'll reach out to schedule a complimentary consultation
-                    with one of our designers.</p>
-                <div class="contact-info">
-                    <a href="tel:+919876543210">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path
-                                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.81 19.79 19.79 0 01.02 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
-                        </svg>
-                        +91 98765 43210
-                    </a>
-                    <a href="mailto:hello@timberlaneinteriors.in">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                            <polyline points="22,6 12,13 2,6" />
-                        </svg>
-                        hello@timberlaneinteriors.in
-                    </a>
-                    <a href="#">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                            <circle cx="12" cy="10" r="3" />
-                        </svg>
-                        Indiranagar, Bangalore — 560038
-                    </a>
-                </div>
-            </div>
-
-            <form class="contact-form reveal reveal-d1" onsubmit="handleForm(event)">
-                <div class="f-row">
-                    <div class="f-group">
-                        <label>First Name</label>
-                        <input type="text" placeholder="Priya" required />
-                    </div>
-                    <div class="f-group">
-                        <label>Last Name</label>
-                        <input type="text" placeholder="Sharma" required />
-                    </div>
-                </div>
-                <div class="f-group">
-                    <label>Phone</label>
-                    <input type="tel" placeholder="+91 98765 43210" required />
-                </div>
-                <div class="f-group">
-                    <label>Project Type</label>
-                    <select required>
-                        <option value="" disabled selected>Select a service</option>
-                        <option>Full Home Interior</option>
-                        <option>Single Room Makeover</option>
-                        <option>Kitchen Design</option>
-                        <option>Bedroom Design</option>
-                        <option>Commercial Space</option>
-                    </select>
-                </div>
-                <div class="f-group">
-                    <label>Tell us about your vision</label>
-                    <textarea rows="3" placeholder="Describe your dream space..."></textarea>
-                </div>
-                <button class="f-submit" type="submit">Send Enquiry</button>
-            </form>
-        </div>
-    <!-- LATEST BLOGS -->
-    <section id="blogs">
-        <div class="blogs-head reveal">
-            <h2>Insights & Inspiration</h2>
-            <p>Explore our latest thoughts on luxury living, interior trends, and the art of fine design.</p>
-        </div>
-        <div class="blogs-grid reveal">
-            <a href="blog-post-1.html" class="blog-card">
-                <div class="blog-img">
-                    <img src="assets/about_1.png" alt="Interior Design Trends 2026">
-                </div>
-                <span class="blog-meta">March 10, 2026 — Trends</span>
-                <h3 class="blog-title">The Evolution of Luxury: Sustainable Materials in Modern Homes</h3>
-                <span class="blog-link">
-                    Read Article 
-                    <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 3l4 4-4 4"/></svg>
-                </span>
-            </a>
-            <a href="blog.html" class="blog-card">
-                <div class="blog-img">
-                    <img src="assets/kitchen.png" alt="Modern Kitchen Design">
-                </div>
-                <span class="blog-meta">March 05, 2026 — Spaces</span>
-                <h3 class="blog-title">Designing the Heart of the Home: A Guide to Chef's Kitchens</h3>
-                <span class="blog-link">
-                    Read Article 
-                    <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 3l4 4-4 4"/></svg>
-                </span>
-            </a>
-            <a href="blog.html" class="blog-card">
-                <div class="blog-img">
-                    <img src="assets/bedroom.png" alt="Master Suite Aesthetics">
-                </div>
-                <span class="blog-meta">February 28, 2026 — Inspiration</span>
-                <h3 class="blog-title">Master Suites: Creating a Sanctuary for Rest and Reflection</h3>
-                <span class="blog-link">
-                    Read Article 
-                    <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 3l4 4-4 4"/></svg>
-                </span>
-            </a>
-        </div>
-    </section>
-
     <!-- FOOTER -->
     <footer>
         <div class="footer-top">
             <div class="footer-brand">
-                <a class="logo" href="index.html"
-                    style="font-weight: 700; color: var(--logo-orange); text-decoration: none;">Timber Lane
-                    Interiors</a>
+                <a class="logo" href="index.html" style="font-weight: 700; color: var(--logo-orange); text-decoration: none;">Timber Lane Interiors</a>
                 <p>We design the feeling of you — luxury interior design studio based in Bangalore, India.</p>
             </div>
             <div class="footer-col">

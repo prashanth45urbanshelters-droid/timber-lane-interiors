@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Journal — Timber Lane Interiors — Luxury Interior Design Blog</title>
+    <meta name="description" content="Explore insights on luxury interior design, sustainable materials, and modern living trends from Timber Lane Interiors." />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #FDFBF7;
+            --warm: #F2EDE6;
+            --logo-orange: #D35400;
+            --logo-dark: #1A1A1B;
+            --brown: #3B2314;
+            --mid: #7A6655;
+            --light: #B5A898;
+            --dark: var(--logo-dark);
+            --accent: var(--logo-orange);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--cream);
+            color: var(--dark);
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            overflow-x: hidden;
+        }
+
+        /* ── PROGRESS BAR ── */
+        #prog {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2px;
+            z-index: 999;
+            background: var(--brown);
+            width: 0;
+            transition: width .1s;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 500;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 48px;
+            background: rgba(242, 237, 230, .98);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(58, 35, 20, .1);
+            transition: all .4s;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .nav-logo img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: .62rem;
+            font-weight: 600;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: rgba(26, 15, 8, .75);
+            text-decoration: none;
+            transition: color .3s, opacity .3s;
+        }
+
+        .nav-links a:hover {
+            opacity: .6;
+        }
+
+        .nav-cta {
+            font-size: .6rem;
+            font-weight: 700;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 3px;
+            transition: opacity .3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-cta:hover {
+            opacity: .6;
+        }
+
+        .ham {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .ham span {
+            display: block;
+            width: 24px;
+            height: 1.5px;
+            background: var(--dark);
+            margin: 5px 0;
+            transition: all .3s;
+        }
+
+        /* ── HERO ── */
+        #hero {
+            height: 60vh;
+            background: var(--warm);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 48px;
+            position: relative;
+            margin-top: 80px;
+        }
+
+        .hero-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(5rem, 12vw, 10rem);
+            color: var(--dark);
+            line-height: .9;
+            margin-bottom: 12px;
+        }
+
+        .hero-subtitle {
+            font-size: .85rem;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* ── BLOG LIST ── */
+        #blog-list {
+            padding: 100px 48px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px 32px;
+        }
+
+        .blog-card {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .blog-card:hover .blog-img img {
+            transform: scale(1.05);
+        }
+
+        .blog-card:hover .blog-title {
+            color: var(--accent);
+        }
+
+        .blog-img {
+            height: 300px;
+            overflow: hidden;
+            margin-bottom: 24px;
+            background: var(--warm);
+        }
+
+        .blog-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .6s;
+        }
+
+        .blog-meta {
+            font-size: .65rem;
+            text-transform: uppercase;
+            letter-spacing: .15em;
+            color: var(--mid);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .blog-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            line-height: 1.35;
+            color: var(--dark);
+            margin-bottom: 16px;
+            transition: color .3s;
+        }
+
+        .blog-excerpt {
+            font-size: .88rem;
+            line-height: 1.8;
+            color: var(--mid);
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .blog-link {
+            font-size: .65rem;
+            text-transform: uppercase;
+            letter-spacing: .2em;
+            color: var(--accent);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--warm);
+            padding: 100px 48px 48px;
+            border-top: 1px solid rgba(58, 35, 20, .1);
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 64px;
+            margin-bottom: 80px;
+        }
+
+        .footer-brand .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--logo-orange);
+            text-decoration: none;
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .footer-brand p {
+            font-size: .85rem;
+            line-height: 1.8;
+            color: var(--mid);
+            max-width: 320px;
+        }
+
+        .footer-col h4 {
+            font-size: .65rem;
+            letter-spacing: .25em;
+            text-transform: uppercase;
+            color: var(--dark);
+            margin-bottom: 28px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul a {
+            font-size: .8rem;
+            color: var(--mid);
+            text-decoration: none;
+            transition: color .3s;
+        }
+
+        .footer-col ul a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            padding-top: 40px;
+            border-top: 1px solid rgba(58, 35, 20, .08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            font-size: .65rem;
+            letter-spacing: .1em;
+            color: var(--light);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .social-links a {
+            font-size: .7rem;
+            color: var(--mid);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: .15em;
+            transition: color .3s;
+        }
+
+        @media (max-width: 1024px) {
+            .footer-top {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .blog-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+            .nav-links { display: none; }
+            .ham { display: block; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="prog"></div>
+
+    <!-- NAV -->
+    <nav id="nav">
+        <a class="nav-logo" href="index.html">
+            <img src="assets/logo.png" alt="Timber Lane Interiors Logo">
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a class="nav-cta" href="contact.html">
+            Get Your Design
+            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M1 7h12M8 3l4 4-4 4" />
+            </svg>
+        </a>
+        <button class="ham" id="ham-btn" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- MOBILE DRAWER -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="blog.html">Blog</a>
+        <a href="packages.html">Packages</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- HERO -->
+    <section id="hero">
+        <span class="hero-subtitle">Our Perspective</span>
+        <h1 class="hero-title">Journal</h1>
+    </section>
+
+    <!-- BLOG LIST -->
+    <main id="blog-list">
+        <div class="blog-grid">
+            <!-- Blog 1 -->
+            <a href="blog-post-1.html" class="blog-card">
+                <div class="blog-img">
+                    <img src="assets/about_1.png" alt="Sustainable Luxury">
+                </div>
+                <span class="blog-meta">March 10, 2026 — Trends</span>
+                <h3 class="blog-title">The Evolution of Luxury: Sustainable Materials in Modern Homes</h3>
+                <p class="blog-excerpt">Discover how eco-conscious choices are redefining high-end interiors, from reclaimed marble to organic textiles that don't compromise on elegance.</p>
+                <span class="blog-link">Read More</span>
+            </a>
+
+            <!-- Blog 2 -->
+            <a href="#" class="blog-card">
+                <div class="blog-img">
+                    <img src="assets/kitchen.png" alt="Chef's Kitchen">
+                </div>
+                <span class="blog-meta">March 05, 2026 — Spaces</span>
+                <h3 class="blog-title">Designing the Heart of the Home: A Guide to Chef's Kitchens</h3>
+                <p class="blog-excerpt">Function meets form in the modern kitchen. Learn the essential elements of a professional-grade kitchen designed for the home culinary artist.</p>
+                <span class="blog-link">Read More</span>
+            </a>
+
+            <!-- Blog 3 -->
+            <a href="#" class="blog-card">
+                <div class="blog-img">
+                    <img src="assets/bedroom.png" alt="Master Suite">
+                </div>
+                <span class="blog-meta">February 28, 2026 — Inspiration</span>
+                <h3 class="blog-title">Master Suites: Creating a Sanctuary for Rest and Reflection</h3>
+                <p class="blog-excerpt">Your bedroom is more than just a place to sleep. Explore how to create a restorative master suite that balances luxury and comfort.</p>
+                <span class="blog-link">Read More</span>
+            </a>
+
+            <!-- Blog 4 -->
+            <a href="#" class="blog-card">
+                <div class="blog-img">
+                    <img src="assets/about_2.png" alt="Smart Homes">
+                </div>
+                <span class="blog-meta">February 15, 2026 — Tech</span>
+                <h3 class="blog-title">Seamless Intelligence: Integrating Smart Tech into Luxury Design</h3>
+                <p class="blog-excerpt">How to incorporate the latest home automation without cluttering your aesthetic. The art of invisible technology.</p>
+                <span class="blog-link">Read More</span>
+            </a>
+
+            <!-- Blog 5 -->
+            <a href="#" class="blog-card">
+                <div class="blog-img">
+                    <img src="assets/guest_room.png" alt="Color Psychology">
+                </div>
+                <span class="blog-meta">February 02, 2026 — Palette</span>
+                <h3 class="blog-title">Whispers of Color: The Power of Neutral Palettes in High-End Spaces</h3>
+                <p class="blog-excerpt">Neutral doesn't mean boring. Explore the depth and sophistication of layered textures and tone-on-tone design strategies.</p>
+                <span class="blog-link">Read More</span>
+            </a>
+
+            <!-- Blog 6 -->
+            <a href="#" class="blog-card">
+                <div class="blog-img">
+                    <img src="assets/portfolio_dining.png" alt="Bespoke Furniture">
+                </div>
+                <span class="blog-meta">January 20, 2026 — Craft</span>
+                <h3 class="blog-title">The Bespoke Edge: Why Custom Furniture is the Ultimate Luxury</h3>
+                <p class="blog-excerpt">From hand-carved wood to custom upholstery, discover why one-of-a-kind pieces are essential for a truly personalized home.</p>
+                <span class="blog-link">Read More</span>
+            </a>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a class="logo" href="index.html">Timber Lane Interiors</a>
+                <p>We design the feeling of you — luxury interior design studio based in Bangalore, India.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigate</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+                    <li><a href="mailto:hello@timberlane.com">hello@timberlane.com</a></li>
+                    <li><a href="#">Bangalore, India</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Timber Lane Interiors. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Pinterest</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
