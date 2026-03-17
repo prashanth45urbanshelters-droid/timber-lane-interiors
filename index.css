@@ -83,7 +83,7 @@ nav {
 }
 
 nav.solid {
-  background: rgba(247, 243, 238, 0.95);
+  background: rgba(0, 0, 0, 0.95);
   backdrop-filter: blur(10px);
   padding: 15px 60px;
   border-bottom: 1px solid rgba(26, 26, 26, 0.05);
