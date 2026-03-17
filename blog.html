@@ -5,7 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>Journal — Timber Lane Interiors — Luxury Interior Design Blog</title>
-    <meta name="description" content="Explore insights on luxury interior design, sustainable materials, and modern living trends from Timber Lane Interiors." />
+    <meta name="description"
+        content="Explore insights on luxury interior design, sustainable materials, and modern living trends from Timber Lane Interiors." />
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet" />
@@ -64,33 +65,46 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 14px 48px;
+            height: 190px;
+            padding: 0 48px;
             background: rgba(242, 237, 230, .98);
             backdrop-filter: blur(16px);
             border-bottom: 1px solid rgba(58, 35, 20, .1);
             transition: all .4s;
         }
 
+        nav.solid {
+            height: 100px;
+            background: rgba(242, 237, 230, 1);
+        }
+
         .nav-logo {
             display: flex;
             align-items: center;
             text-decoration: none;
+            height: 100%;
         }
 
         .nav-logo img {
-            height: 60px;
+            height: 190px;
             width: auto;
             object-fit: contain;
+            transition: all .4s;
+        }
+
+        nav.solid .nav-logo img {
+            height: 90px;
         }
 
         .nav-links {
             display: flex;
-            gap: 28px;
+            gap: 32px;
             list-style: none;
+            margin-left: 40px;
         }
 
         .nav-links a {
-            font-size: .62rem;
+            font-size: .8rem;
             font-weight: 600;
             letter-spacing: .2em;
             text-transform: uppercase;
@@ -100,26 +114,75 @@
         }
 
         .nav-links a:hover {
-            opacity: .6;
+            opacity: 1;
+            color: var(--accent);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-left: auto;
         }
 
         .nav-cta {
-            font-size: .6rem;
+            font-size: .75rem;
             font-weight: 700;
-            letter-spacing: .2em;
+            letter-spacing: .15em;
             text-transform: uppercase;
             color: var(--accent);
             text-decoration: none;
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 3px;
-            transition: opacity .3s;
+            border: 1px solid var(--accent);
+            padding: 10px 20px;
+            transition: all .3s;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
         }
 
         .nav-cta:hover {
-            opacity: .6;
+            background: var(--accent);
+            color: var(--cream);
+        }
+
+        .nav-phone {
+            font-size: .82rem;
+            font-weight: 600;
+            color: var(--logo-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color .3s;
+        }
+
+        .nav-phone:hover {
+            color: var(--accent);
+        }
+
+        .nav-phone svg {
+            width: 16px;
+            height: 16px;
+            color: var(--accent);
+        }
+
+        .pdf-btn {
+            background: var(--brown);
+            color: var(--cream) !important;
+            padding: 14px 28px;
+            text-decoration: none !important;
+            border-bottom: none !important;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all .3s;
+        }
+
+        .pdf-btn:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(211, 84, 0, .2);
         }
 
         .ham {
@@ -150,7 +213,7 @@
             text-align: center;
             padding: 0 48px;
             position: relative;
-            margin-top: 80px;
+            margin-top: 190px;
         }
 
         .hero-title {
@@ -234,6 +297,7 @@
             margin-bottom: 20px;
             display: -webkit-box;
             -webkit-line-clamp: 3;
+            line-clamp: 3;
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
@@ -351,11 +415,23 @@
             .blog-grid {
                 grid-template-columns: 1fr;
             }
+
             .footer-top {
                 grid-template-columns: 1fr;
             }
-            .nav-links { display: none; }
-            .ham { display: block; }
+
+            .nav-links,
+            .nav-actions {
+                display: none;
+            }
+
+            .nav-logo img {
+                height: 45px;
+            }
+
+            .ham {
+                display: block;
+            }
         }
     </style>
 </head>
@@ -378,12 +454,22 @@
             <li><a href="packages.html">Packages</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        <a class="nav-cta" href="contact.html">
-            Get Your Design
-            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M1 7h12M8 3l4 4-4 4" />
-            </svg>
-        </a>
+        <div class="nav-actions">
+            <a href="tel:98884651111" class="nav-phone">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                    </path>
+                </svg>
+                98884651111
+            </a>
+            <a class="nav-cta" href="contact.html">
+                Get Your Design
+                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M1 7h12M8 3l4 4-4 4" />
+                </svg>
+            </a>
+        </div>
         <button class="ham" id="ham-btn" aria-label="Menu">
             <span></span><span></span><span></span>
         </button>
@@ -398,6 +484,7 @@
         <a href="blog.html">Blog</a>
         <a href="packages.html">Packages</a>
         <a href="contact.html">Contact</a>
+        <a href="tel:98884651111" style="font-size: 1.2rem; color: var(--accent); font-family: 'Inter', sans-serif; font-weight: 500;">98884651111</a>
     </div>
 
     <!-- HERO -->
@@ -416,7 +503,8 @@
                 </div>
                 <span class="blog-meta">March 10, 2026 — Trends</span>
                 <h3 class="blog-title">The Evolution of Luxury: Sustainable Materials in Modern Homes</h3>
-                <p class="blog-excerpt">Discover how eco-conscious choices are redefining high-end interiors, from reclaimed marble to organic textiles that don't compromise on elegance.</p>
+                <p class="blog-excerpt">Discover how eco-conscious choices are redefining high-end interiors, from
+                    reclaimed marble to organic textiles that don't compromise on elegance.</p>
                 <span class="blog-link">Read More</span>
             </a>
 
@@ -427,7 +515,8 @@
                 </div>
                 <span class="blog-meta">March 05, 2026 — Spaces</span>
                 <h3 class="blog-title">Designing the Heart of the Home: A Guide to Chef's Kitchens</h3>
-                <p class="blog-excerpt">Function meets form in the modern kitchen. Learn the essential elements of a professional-grade kitchen designed for the home culinary artist.</p>
+                <p class="blog-excerpt">Function meets form in the modern kitchen. Learn the essential elements of a
+                    professional-grade kitchen designed for the home culinary artist.</p>
                 <span class="blog-link">Read More</span>
             </a>
 
@@ -438,7 +527,8 @@
                 </div>
                 <span class="blog-meta">February 28, 2026 — Inspiration</span>
                 <h3 class="blog-title">Master Suites: Creating a Sanctuary for Rest and Reflection</h3>
-                <p class="blog-excerpt">Your bedroom is more than just a place to sleep. Explore how to create a restorative master suite that balances luxury and comfort.</p>
+                <p class="blog-excerpt">Your bedroom is more than just a place to sleep. Explore how to create a
+                    restorative master suite that balances luxury and comfort.</p>
                 <span class="blog-link">Read More</span>
             </a>
 
@@ -449,7 +539,8 @@
                 </div>
                 <span class="blog-meta">February 15, 2026 — Tech</span>
                 <h3 class="blog-title">Seamless Intelligence: Integrating Smart Tech into Luxury Design</h3>
-                <p class="blog-excerpt">How to incorporate the latest home automation without cluttering your aesthetic. The art of invisible technology.</p>
+                <p class="blog-excerpt">How to incorporate the latest home automation without cluttering your aesthetic.
+                    The art of invisible technology.</p>
                 <span class="blog-link">Read More</span>
             </a>
 
@@ -460,7 +551,8 @@
                 </div>
                 <span class="blog-meta">February 02, 2026 — Palette</span>
                 <h3 class="blog-title">Whispers of Color: The Power of Neutral Palettes in High-End Spaces</h3>
-                <p class="blog-excerpt">Neutral doesn't mean boring. Explore the depth and sophistication of layered textures and tone-on-tone design strategies.</p>
+                <p class="blog-excerpt">Neutral doesn't mean boring. Explore the depth and sophistication of layered
+                    textures and tone-on-tone design strategies.</p>
                 <span class="blog-link">Read More</span>
             </a>
 
@@ -471,7 +563,8 @@
                 </div>
                 <span class="blog-meta">January 20, 2026 — Craft</span>
                 <h3 class="blog-title">The Bespoke Edge: Why Custom Furniture is the Ultimate Luxury</h3>
-                <p class="blog-excerpt">From hand-carved wood to custom upholstery, discover why one-of-a-kind pieces are essential for a truly personalized home.</p>
+                <p class="blog-excerpt">From hand-carved wood to custom upholstery, discover why one-of-a-kind pieces
+                    are essential for a truly personalized home.</p>
                 <span class="blog-link">Read More</span>
             </a>
         </div>
@@ -493,6 +586,7 @@
                     <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li><a href="assets/company_profile.pdf" download>Company Profile</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -505,8 +599,8 @@
             <div class="footer-col">
                 <h4>Contact</h4>
                 <ul>
-                    <li><a href="tel:+919876543210">+91 98765 43210</a></li>
-                    <li><a href="mailto:hello@timberlane.com">hello@timberlane.com</a></li>
+                    <li><a href="tel:98884651111">98884651111</a></li>
+                    <li><a href="mailto:info@timberlane.co.in">info@timberlane.co.in</a></li>
                     <li><a href="#">Bangalore, India</a></li>
                 </ul>
             </div>

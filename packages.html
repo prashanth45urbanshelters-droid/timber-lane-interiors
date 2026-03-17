@@ -5,7 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>Design Packages — Timber Lane Interiors — Luxury Interior Design Studio Bangalore</title>
-    <meta name="description" content="Affordable luxury interior design packages tailored for the modern Indian home. Explore our Core, Premium, and Bespoke villa solutions." />
+    <meta name="description"
+        content="Affordable luxury interior design packages tailored for the modern Indian home. Explore our Core, Premium, and Bespoke villa solutions." />
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet" />
@@ -64,7 +65,8 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 14px 48px;
+            height: 190px;
+            padding: 0 48px;
             background: rgba(242, 237, 230, .98);
             backdrop-filter: blur(16px);
             border-bottom: 1px solid rgba(58, 35, 20, .1);
@@ -72,7 +74,7 @@
         }
 
         nav.solid {
-            padding: 12px 48px;
+            height: 100px;
             background: rgba(242, 237, 230, 1);
         }
 
@@ -80,22 +82,29 @@
             display: flex;
             align-items: center;
             text-decoration: none;
+            height: 100%;
         }
 
         .nav-logo img {
-            height: 60px;
+            height: 190px;
             width: auto;
             object-fit: contain;
+            transition: all .4s;
+        }
+
+        nav.solid .nav-logo img {
+            height: 90px;
         }
 
         .nav-links {
             display: flex;
-            gap: 28px;
+            gap: 32px;
             list-style: none;
+            margin-left: 40px;
         }
 
         .nav-links a {
-            font-size: .62rem;
+            font-size: .8rem;
             font-weight: 600;
             letter-spacing: .2em;
             text-transform: uppercase;
@@ -105,26 +114,75 @@
         }
 
         .nav-links a:hover {
-            opacity: .6;
+            opacity: 1;
+            color: var(--accent);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-left: auto;
         }
 
         .nav-cta {
-            font-size: .6rem;
+            font-size: .75rem;
             font-weight: 700;
-            letter-spacing: .2em;
+            letter-spacing: .15em;
             text-transform: uppercase;
             color: var(--accent);
             text-decoration: none;
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 3px;
-            transition: opacity .3s;
+            border: 1px solid var(--accent);
+            padding: 10px 20px;
+            transition: all .3s;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
         }
 
         .nav-cta:hover {
-            opacity: .6;
+            background: var(--accent);
+            color: var(--cream);
+        }
+
+        .nav-phone {
+            font-size: .82rem;
+            font-weight: 600;
+            color: var(--logo-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color .3s;
+        }
+
+        .nav-phone:hover {
+            color: var(--accent);
+        }
+
+        .nav-phone svg {
+            width: 16px;
+            height: 16px;
+            color: var(--accent);
+        }
+
+        .pdf-btn {
+            background: var(--brown);
+            color: var(--cream) !important;
+            padding: 14px 28px;
+            text-decoration: none !important;
+            border-bottom: none !important;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all .3s;
+        }
+
+        .pdf-btn:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(211, 84, 0, .2);
         }
 
         .nav-cta svg {
@@ -1086,6 +1144,8 @@
 
         .f-group select {
             -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
             cursor: pointer;
         }
 
@@ -1244,16 +1304,22 @@
         /* ── RESPONSIVE ── */
         @media (max-width: 900px) {
             nav {
-                padding: 18px 24px;
+                height: 80px;
+                padding: 0 24px;
             }
 
             nav.solid {
-                padding: 12px 24px;
+                height: 60px;
+                padding: 0 24px;
             }
 
             .nav-links,
-            .nav-cta {
+            .nav-actions {
                 display: none;
+            }
+
+            .nav-logo img {
+                height: 45px;
             }
 
             .ham {
@@ -1424,12 +1490,22 @@
             <li><a href="packages.html">Packages</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        <a class="nav-cta" href="contact.html">
-            Get Your Design
-            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M1 7h12M8 3l4 4-4 4" />
-            </svg>
-        </a>
+        <div class="nav-actions">
+            <a href="tel:98884651111" class="nav-phone">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                    </path>
+                </svg>
+                98884651111
+            </a>
+            <a class="nav-cta" href="contact.html">
+                Get Your Design
+                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M1 7h12M8 3l4 4-4 4" />
+                </svg>
+            </a>
+        </div>
         <button class="ham" id="ham-btn" aria-label="Menu">
             <span></span><span></span><span></span>
         </button>
@@ -1444,12 +1520,17 @@
         <a href="blog.html">Blog</a>
         <a href="packages.html">Packages</a>
         <a href="contact.html">Contact</a>
+        <a href="tel:98884651111" style="font-size: 1.2rem; color: var(--accent); font-family: 'Inter', sans-serif; font-weight: 500;">98884651111</a>
     </div>
 
     <!-- PAGE HERO -->
-    <section class="page-hero" style="background: var(--warm); padding: 180px 48px 100px; text-align: center;">
-        <h1 style="font-family: 'Bebas Neue', sans-serif; font-size: clamp(4rem, 10vw, 8rem); line-height: 1; color: var(--dark);">Design Packages</h1>
-        <p style="font-size: .8rem; letter-spacing: .3em; text-transform: uppercase; color: var(--accent); margin-top: 16px;">Curated Solutions for Your Home</p>
+    <section class="page-hero" style="background: var(--warm); padding: 260px 48px 100px; text-align: center;">
+        <h1
+            style="font-family: 'Bebas Neue', sans-serif; font-size: clamp(4rem, 10vw, 8rem); line-height: 1; color: var(--dark);">
+            Design Packages</h1>
+        <p
+            style="font-size: .8rem; letter-spacing: .3em; text-transform: uppercase; color: var(--accent); margin-top: 16px;">
+            Curated Solutions for Your Home</p>
     </section>
 
     <!-- PACKAGES SECTION -->
@@ -1459,11 +1540,21 @@
                 <h3 class="pkg-name">The Core Home</h3>
                 <p class="pkg-price">Starts at ₹4.5 Lakhs</p>
                 <ul class="pkg-list">
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Semi-modular Kitchen</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Wardrobes in 2 Bedrooms</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Basic False Ceiling</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Accent Wall Painting</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> 45-Day Delivery Timeline</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg> Semi-modular Kitchen</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg> Wardrobes in 2 Bedrooms</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg> Basic False Ceiling</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg> Accent Wall Painting</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg> 45-Day Delivery Timeline</li>
                 </ul>
                 <a href="contact.html" class="pkg-btn">Inquire Now</a>
             </div>
@@ -1472,11 +1563,21 @@
                 <h3 class="pkg-name">The Premium Home</h3>
                 <p class="pkg-price">Starts at ₹8.5 Lakhs</p>
                 <ul class="pkg-list">
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Fully Modular Kitchen</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Wardrobes up to 3 Bedrooms</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Comprehensive False Ceiling</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Custom Fixed Furniture</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Custom Wallpaper & Textures</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg> Fully Modular Kitchen</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg> Wardrobes up to 3 Bedrooms</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg> Comprehensive False Ceiling</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg> Custom Fixed Furniture</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg> Custom Wallpaper & Textures</li>
                 </ul>
                 <a href="contact.html" class="pkg-btn">Book Consultation</a>
             </div>
@@ -1485,11 +1586,21 @@
                 <h3 class="pkg-name">The Bespoke Villa</h3>
                 <p class="pkg-price">Starts at ₹18 Lakhs+</p>
                 <ul class="pkg-list">
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Luxury Chef's Kitchen</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Walk-in Closets & Smart Storage</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Full Home Automation</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> End-to-End Furniture</li>
-                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Premium Stonework & Lighting</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg> Luxury Chef's Kitchen</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg> Walk-in Closets & Smart Storage</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg> Full Home Automation</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg> End-to-End Furniture</li>
+                    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg> Premium Stonework & Lighting</li>
                 </ul>
                 <a href="contact.html" class="pkg-btn">Inquire Now</a>
             </div>
@@ -1500,7 +1611,9 @@
     <footer>
         <div class="footer-top">
             <div class="footer-brand">
-                <a class="logo" href="index.html" style="font-weight: 700; color: var(--logo-orange); text-decoration: none;">Timber Lane Interiors</a>
+                <a class="logo" href="index.html"
+                    style="font-weight: 700; color: var(--logo-orange); text-decoration: none;">Timber Lane
+                    Interiors</a>
                 <p>We design the feeling of you — luxury interior design studio based in Bangalore, India.</p>
             </div>
             <div class="footer-col">
@@ -1512,6 +1625,7 @@
                     <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li><a href="assets/company_profile.pdf" download>Company Profile</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -1530,7 +1644,7 @@
                     <li><a href="#">Instagram</a></li>
                     <li><a href="#">Houzz</a></li>
                     <li><a href="#">WhatsApp</a></li>
-                    <li><a href="mailto:hello@timberlaneinteriors.in">Email Us</a></li>
+                    <li><a href="mailto:info@timberlane.co.in">Email Us</a></li>
                 </ul>
             </div>
         </div>
@@ -1541,7 +1655,7 @@
     </footer>
 
     <!-- WHATSAPP -->
-    <a class="wa-float" href="https://wa.me/919876543210" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <a class="wa-float" href="https://wa.me/98884651111" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
         <svg viewBox="0 0 24 24">
             <path
                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
