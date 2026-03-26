@@ -808,100 +808,63 @@
         </div>
     </section>
 
-    <section id="contact" class="py-24 bg-brand-cream border-t border-brand-dark/5">
-        <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            <div class="reveal">
-                <h2 class="font-serif text-4xl md:text-5xl text-brand-dark mb-6">Start Your <br><em
-                        class="text-brand-orange">Design Journey</em></h2>
-                <p class="text-brand-muted text-sm md:text-base leading-relaxed mb-10 max-w-md">
-                    Tell us about your space and your vision. We'll reach out to schedule a complimentary consultation
-                    with one of our designers.
-                </p>
-                <div class="space-y-6">
-                    <a href="tel:+918884651111"
-                        class="flex items-center gap-4 text-brand-dark hover:text-brand-orange transition-colors">
-                        <div
-                            class="w-10 h-10 rounded-full bg-brand-orange/10 flex items-center justify-center shrink-0">
-                            <svg class="w-5 h-5 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5">
-                                <path
-                                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.81 19.79 19.79 0 01.02 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
-                            </svg>
-                        </div>
-                        <span class="font-medium text-sm">+91 8884651111</span>
-                    </a>
-                    <a href="mailto:info@timberlane.co.in"
-                        class="flex items-center gap-4 text-brand-dark hover:text-brand-orange transition-colors">
-                        <div
-                            class="w-10 h-10 rounded-full bg-brand-orange/10 flex items-center justify-center shrink-0">
-                            <svg class="w-5 h-5 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                                <polyline points="22,6 12,13 2,6" />
-                            </svg>
-                        </div>
-                        <span class="font-medium text-sm">info@timberlane.co.in</span>
-                    </a>
-                    <div class="flex items-center gap-4 text-brand-dark">
-                        <div
-                            class="w-10 h-10 rounded-full bg-brand-orange/10 flex items-center justify-center shrink-0">
-                            <svg class="w-5 h-5 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                                <circle cx="12" cy="10" r="3" />
-                            </svg>
-                        </div>
-                        <span class="font-medium text-sm">318, 2nd Floor, 9th Main Rd, 5th Block, Jayanagar, Bengaluru,
-                            Karnataka 560041</span>
+    <section id="contact" class="py-24 bg-brand-warm border-t border-brand-dark/5">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 bg-white shadow-2xl overflow-hidden rounded-2xl reveal">
+                <!-- Left: Promo Post -->
+                <div class="relative h-full min-h-[400px] lg:min-h-full overflow-hidden group">
+                    <img src="assets/enquiry_promo.png" alt="Furniture Sale"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-10 left-10 right-10">
+                        <span class="inline-block px-3 py-1 bg-brand-orange text-white text-[0.6rem] tracking-[0.2em] uppercase font-bold mb-4">Limited Offer</span>
+                        <h3 class="font-serif text-3xl md:text-4xl text-white mb-4 leading-tight">Revitalize Your Home <br>With Our Signature Sale</h3>
+                        <p class="text-white/80 text-sm max-w-sm">Bring your vision to life with expert designers and premium finishes. Book your free consultation today.</p>
                     </div>
+                </div>
+
+                <!-- Right: Enquiry Form -->
+                <div class="p-8 md:p-12 lg:p-16">
+                    <div class="mb-10">
+                        <h2 class="font-serif text-3xl md:text-4xl text-brand-dark mb-4">Free Design <em class="text-brand-orange">Consultation</em></h2>
+                        <p class="text-brand-muted text-sm">Tell us about your space and we'll reach out to schedule your session.</p>
+                    </div>
+
+                    <form onsubmit="handleForm(event)" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-[0.6rem] tracking-widest uppercase text-brand-muted mb-2 font-semibold">First Name</label>
+                                <input type="text" class="f-input" placeholder="Priya" required />
+                            </div>
+                            <div>
+                                <label class="block text-[0.6rem] tracking-widest uppercase text-brand-muted mb-2 font-semibold">Last Name</label>
+                                <input type="text" class="f-input" placeholder="Sharma" required />
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-[0.6rem] tracking-widest uppercase text-brand-muted mb-2 font-semibold">Phone Number</label>
+                            <input type="tel" class="f-input" placeholder="+91 8884651111" required />
+                        </div>
+                        <div>
+                            <label class="block text-[0.6rem] tracking-widest uppercase text-brand-muted mb-2 font-semibold">Project Type</label>
+                            <select required class="f-input cursor-pointer appearance-none bg-transparent">
+                                <option value="" disabled selected>Select a service</option>
+                                <option>Full Home Interior</option>
+                                <option>Single Room Makeover</option>
+                                <option>Kitchen Design</option>
+                                <option>Bedroom Design</option>
+                                <option>Commercial Space</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-[0.6rem] tracking-widest uppercase text-brand-muted mb-2 font-semibold">Your Vision</label>
+                            <textarea rows="3" class="f-input resize-none" placeholder="Describe your dream space..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-brand-dark text-white py-4 text-xs tracking-widest uppercase font-bold hover:bg-brand-orange transition-all duration-300 shadow-lg shadow-brand-dark/10">Book Free Consultation</button>
+                        <p class="text-[0.6rem] text-brand-muted text-center pt-2 italic">By submitting, you agree to our <a href="privacy-policy.html" class="underline hover:text-brand-orange">Privacy Policy</a></p>
+                    </form>
                 </div>
             </div>
-
-            <form onsubmit="handleForm(event)"
-                class="bg-white p-8 md:p-12 shadow-2xl shadow-brand-dark/5 rounded-bl-[4rem] reveal delay-200">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                    <div>
-                        <label
-                            class="block text-[0.6rem] tracking-widest uppercase text-brand-muted mb-2 font-semibold">First
-                            Name</label>
-                        <input type="text" class="f-input" placeholder="Priya" required />
-                    </div>
-                    <div>
-                        <label
-                            class="block text-[0.6rem] tracking-widest uppercase text-brand-muted mb-2 font-semibold">Last
-                            Name</label>
-                        <input type="text" class="f-input" placeholder="Sharma" required />
-                    </div>
-                </div>
-                <div class="mb-8">
-                    <label
-                        class="block text-[0.6rem] tracking-widest uppercase text-brand-muted mb-2 font-semibold">Phone</label>
-                    <input type="tel" class="f-input" placeholder="+91 8884651111" required />
-                </div>
-                <div class="mb-8">
-                    <label
-                        class="block text-[0.6rem] tracking-widest uppercase text-brand-muted mb-2 font-semibold">Project
-                        Type</label>
-                    <select required class="f-input cursor-pointer appearance-none bg-transparent">
-                        <option value="" disabled selected>Select a service</option>
-                        <option>Full Home Interior</option>
-                        <option>Single Room Makeover</option>
-                        <option>Kitchen Design</option>
-                        <option>Bedroom Design</option>
-                        <option>Commercial Space</option>
-                    </select>
-                </div>
-                <div class="mb-10">
-                    <label
-                        class="block text-[0.6rem] tracking-widest uppercase text-brand-muted mb-2 font-semibold">Tell
-                        us about your vision</label>
-                    <textarea rows="3" class="f-input resize-none"
-                        placeholder="Describe your dream space..."></textarea>
-                </div>
-                <button type="submit"
-                    class="f-submit w-full bg-brand-dark text-white py-4 text-xs tracking-widest uppercase font-bold hover:bg-brand-orange transition-colors">Send
-                    Enquiry</button>
-            </form>
         </div>
     </section>
 
