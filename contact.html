@@ -43,52 +43,43 @@
         </div>
     </header>
 
-    <section class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            <!-- LEFT: Info -->
-            <div class="reveal">
-                <h2 class="font-serif text-3xl md:text-4xl text-brand-dark mb-8">Let's make your space <em class="text-brand-orange">extraordinary.</em></h2>
-                <p class="text-brand-muted leading-relaxed text-sm md:text-base mb-12 max-w-md">Whether you're planning a full home redesign or need guidance on a single room, we'd love to hear from you.</p>
-                <div class="space-y-8">
-                    <div class="flex items-start gap-5">
-                        <svg class="w-5 h-5 text-brand-orange mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                        <div><p class="font-semibold text-sm mb-1">Studio Location</p><p class="text-sm text-brand-muted">318, 2nd Floor, 9th Main Rd, 5th Block, Jayanagar, Bengaluru, Karnataka 560041</p></div>
-                    </div>
-                    <div class="flex items-start gap-5">
-                        <svg class="w-5 h-5 text-brand-orange mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                        <div><p class="font-semibold text-sm mb-1">Call Us</p><a href="tel:+918884651111" class="text-sm text-brand-muted hover:text-brand-orange transition-colors">+91 8884651111</a></div>
-                    </div>
-                    <div class="flex items-start gap-5">
-                        <svg class="w-5 h-5 text-brand-orange mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                        <div><p class="font-semibold text-sm mb-1">Email</p><a href="mailto:info@timberlane.co.in" class="text-sm text-brand-muted hover:text-brand-orange transition-colors">info@timberlane.co.in</a></div>
-                    </div>
-                    <div class="flex items-start gap-5">
-                        <svg class="w-5 h-5 text-brand-orange mt-1 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                        <div><p class="font-semibold text-sm mb-1">Working Hours</p><p class="text-sm text-brand-muted">Mon — Sat: 10AM — 7PM</p></div>
-                    </div>
-                </div>
-                <!-- Testimonials -->
-                <div class="mt-12 pt-10 border-t border-brand-dark/8">
-                    <p class="text-[0.65rem] tracking-widest uppercase text-brand-orange mb-6 font-semibold">What Our Clients Say</p>
-                    <div class="space-y-6">
-                        <div class="bg-white p-6 border border-brand-dark/5 rounded">
-                            <div class="flex gap-1 mb-3 text-brand-orange"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            <p class="text-sm text-brand-muted leading-relaxed italic">"Timberlane transformed our 3BHK into a dream home. The attention to detail was incredible."</p>
-                            <p class="mt-3 text-xs font-semibold text-brand-dark">— Priya Sharma, Whitefield</p>
-                        </div>
-                        <div class="bg-white p-6 border border-brand-dark/5 rounded">
-                            <div class="flex gap-1 mb-3 text-brand-orange"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                            <p class="text-sm text-brand-muted leading-relaxed italic">"Professional, creative, and always on time. Our kitchen is now the highlight of our home."</p>
-                            <p class="mt-3 text-xs font-semibold text-brand-dark">— Arjun Mehta, Koramangala</p>
+    <section class="py-24 bg-brand-warm border-t border-brand-dark/5">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 bg-white shadow-2xl overflow-hidden rounded-2xl reveal">
+                <!-- Left: Promo Info & Image -->
+                <div class="relative h-full min-h-[500px] lg:min-h-full overflow-hidden group">
+                    <img src="assets/enquiry_promo.png" alt="Contact Us"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/60 via-brand-dark/20 to-transparent"></div>
+                    
+                    <div class="absolute inset-0 p-10 flex flex-col justify-end">
+                        <h2 class="font-serif text-3xl md:text-5xl text-white mb-6 leading-tight transition-transform duration-500 group-hover:-translate-y-2">Let's make your space <em class="text-brand-orange">extraordinary.</em></h2>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4 text-white hover:text-brand-orange transition-colors">
+                                <div class="w-8 h-8 rounded-full bg-brand-orange/20 backdrop-blur flex items-center justify-center shrink-0">
+                                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                </div>
+                                <span class="text-sm border-b border-white/20 pb-0.5 font-medium">+91 8884651111</span>
+                            </div>
+                            <div class="flex items-center gap-4 text-white hover:text-brand-orange transition-colors">
+                                <div class="w-8 h-8 rounded-full bg-brand-orange/20 backdrop-blur flex items-center justify-center shrink-0">
+                                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                </div>
+                                <span class="text-sm border-b border-white/20 pb-0.5 font-medium">info@timberlane.co.in</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- RIGHT: Form -->
-            <div class="reveal delay-200">
-                <form id="contact-form" onsubmit="handleForm(event)" class="bg-white p-8 md:p-12 border border-brand-dark/5">
-                    <h3 class="font-serif text-2xl text-brand-dark mb-8">Send an Enquiry</h3>
-                    <div class="space-y-6">
+
+                <!-- Right: Form -->
+                <div class="p-8 md:p-12 lg:p-16">
+                    <div class="mb-10">
+                        <h3 class="font-serif text-3xl text-brand-dark mb-4">Book Your <em class="text-brand-orange">Consultation</em></h3>
+                        <p class="text-brand-muted text-sm leading-relaxed">Fill out the form below and our design lead will contact you within 24 hours.</p>
+                    </div>
+
+                    <form id="contact-form" onsubmit="handleForm(event)" class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label class="block text-[0.6rem] tracking-widest uppercase text-brand-muted mb-2 font-semibold">Full Name</label>
@@ -116,12 +107,28 @@
                             </select>
                         </div>
                         <div>
-                            <label class="block text-[0.6rem] tracking-widest uppercase text-brand-muted mb-2 font-semibold">Tell Us About Your Project</label>
-                            <textarea rows="4" placeholder="Describe your vision..." class="w-full bg-transparent border-b border-brand-dark/15 text-sm py-3 focus:border-brand-orange outline-none transition-colors resize-none placeholder:text-brand-dark/30"></textarea>
+                            <label class="block text-[0.6rem] tracking-widest uppercase text-brand-muted mb-2 font-semibold">Project Vision</label>
+                            <textarea rows="4" placeholder="Briefly describe your dream space..." class="w-full bg-transparent border-b border-brand-dark/15 text-sm py-3 focus:border-brand-orange outline-none transition-colors resize-none placeholder:text-brand-dark/30"></textarea>
                         </div>
-                        <button type="submit" class="f-submit bg-brand-dark text-white w-full py-4 text-xs tracking-[0.2em] uppercase font-semibold hover:bg-brand-orange transition-colors duration-300">Send Enquiry</button>
+                        <button type="submit" class="f-submit bg-brand-dark text-white w-full py-4 text-xs tracking-[0.2em] uppercase font-bold hover:bg-brand-orange transition-all duration-300 shadow-lg shadow-brand-dark/10">Submit Enquiry</button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Working Hours & Location Below Card -->
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-12 text-sm">
+                <div class="flex gap-5 reveal">
+                    <div class="w-10 h-10 rounded-full bg-brand-orange/5 flex items-center justify-center shrink-0">
+                        <svg class="w-5 h-5 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                     </div>
-                </form>
+                    <div><p class="font-bold uppercase tracking-widest text-[0.65rem] mb-2">Business Hours</p><p class="text-brand-muted">Monday — Saturday: 10:00 AM to 7:00 PM</p></div>
+                </div>
+                <div class="flex gap-5 reveal delay-100">
+                    <div class="w-10 h-10 rounded-full bg-brand-orange/5 flex items-center justify-center shrink-0">
+                        <svg class="w-5 h-5 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    </div>
+                    <div><p class="font-bold uppercase tracking-widest text-[0.65rem] mb-2">Studio Visit</p><p class="text-brand-muted">318, 2nd Floor, 9th Main Rd, 5th Block, Jayanagar, Bengaluru, KA 560041</p></div>
+                </div>
             </div>
         </div>
     </section>
