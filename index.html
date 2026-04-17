@@ -109,6 +109,40 @@
             padding-top: 0.75rem;
             padding-bottom: 0.75rem;
         }
+
+        /* Thank You Animation */
+        .check-circle {
+            stroke-dasharray: 226;
+            stroke-dashoffset: 226;
+            animation: drawCircle 0.8s ease forwards;
+        }
+
+        .check-mark {
+            stroke-dasharray: 60;
+            stroke-dashoffset: 60;
+            animation: drawCheck 0.5s 0.6s ease forwards;
+        }
+
+        @keyframes drawCircle {
+            to { stroke-dashoffset: 0; }
+        }
+
+        @keyframes drawCheck {
+            to { stroke-dashoffset: 0; }
+        }
+
+        .thankyou-text {
+            opacity: 0;
+            transform: translateY(15px);
+            animation: fadeInUp 0.5s 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 
@@ -120,7 +154,7 @@
         class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 md:px-12 py-3 bg-transparent">
         <a href="index.html" class="flex-shrink-0 relative z-50">
             <img src="assets/logo.png" alt="Timberlane Interiors Logo"
-                class="h-16 md:h-28 object-contain transition-all duration-300">
+                class="h-8 md:h-14 object-contain transition-all duration-300">
         </a>
 
         <ul class="hidden lg:flex items-center gap-8 xl:gap-12">
@@ -191,6 +225,7 @@
             class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Blog</a>
         <a href="packages.html"
             class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Packages</a>
+        
         <a href="contact.html"
             class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Contact</a>
     </div>
@@ -228,6 +263,14 @@
             </div>
         </div>
     </header>
+
+    <!-- CTA Banner -->
+    <section class="reveal pt-16 md:pt-24 px-6 md:px-12 max-w-7xl mx-auto">
+        <a href="contact.html" class="group block overflow-hidden">
+            <img src="assets/web-banner.png" alt="Get Expert Interior Solutions For Your Home - Contact Now"
+                class="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.02]" />
+        </a>
+    </section>
 
     <section id="about" class="py-24 md:py-32 px-6 md:px-12 max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -470,7 +513,7 @@
         <div class="flex justify-between items-end mb-12 px-2 reveal">
             <h2 class="font-serif text-4xl md:text-5xl text-brand-dark">Our Work — <br><em
                     class="text-brand-orange">Spaces We've Felt</em></h2>
-            <a href="#contact"
+            <a href="portfolio.html"
                 class="hidden md:flex items-center gap-2 text-xs tracking-widest uppercase font-bold text-brand-dark border-b-2 border-brand-orange pb-1 hover:text-brand-orange transition-colors">
                 View All Projects
                 <svg class="w-4 h-4" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -480,8 +523,9 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[300px]">
-            <div class="md:col-span-2 md:row-span-2 relative overflow-hidden group reveal cursor-pointer">
-                <img src="assets/portfolio_living.png" alt="Living Room"
+            <div class="md:col-span-2 md:row-span-2 relative overflow-hidden group reveal cursor-pointer rounded-lg">
+                <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=900&h=900&fit=crop&q=80"
+                    alt="Living Room"
                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 group-hover:brightness-75" />
                 <div
                     class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
@@ -489,8 +533,9 @@
                     <p class="font-serif text-2xl text-white">The Arora Residence</p>
                 </div>
             </div>
-            <div class="relative overflow-hidden group reveal delay-100 cursor-pointer">
-                <img src="assets/bedroom.png" alt="Bedroom"
+            <div class="relative overflow-hidden group reveal delay-100 cursor-pointer rounded-lg">
+                <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=600&h=400&fit=crop&q=80"
+                    alt="Bedroom"
                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 group-hover:brightness-75" />
                 <div
                     class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
@@ -498,8 +543,9 @@
                     <p class="font-serif text-xl text-white">Serene Master Suite</p>
                 </div>
             </div>
-            <div class="relative overflow-hidden group reveal delay-200 cursor-pointer">
-                <img src="assets/kitchen_new.png" alt="Kitchen"
+            <div class="relative overflow-hidden group reveal delay-200 cursor-pointer rounded-lg">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop&q=80"
+                    alt="Kitchen"
                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 group-hover:brightness-75" />
                 <div
                     class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
@@ -507,24 +553,36 @@
                     <p class="font-serif text-xl text-white">The Mehta Kitchen</p>
                 </div>
             </div>
-            <div class="relative overflow-hidden group reveal delay-100 cursor-pointer">
-                <img src="assets/guest_room.png" alt="Guest Room"
-                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 group-hover:brightness-75" />
-                <div
-                    class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
-                    <p class="text-[0.6rem] tracking-[0.25em] uppercase text-brand-orange mb-1">Guest Room</p>
-                    <p class="font-serif text-xl text-white">Warm Guest Retreat</p>
-                </div>
-            </div>
-            <div class="relative overflow-hidden group reveal delay-200 cursor-pointer">
-                <img src="assets/portfolio_dining.png" alt="Dining"
+            <div class="relative overflow-hidden group reveal delay-100 cursor-pointer rounded-lg">
+                <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=600&h=400&fit=crop&q=80"
+                    alt="Dining Room"
                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 group-hover:brightness-75" />
                 <div
                     class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
                     <p class="text-[0.6rem] tracking-[0.25em] uppercase text-brand-orange mb-1">Dining</p>
-                    <p class="font-serif text-xl text-white">The Sharma Dining</p>
+                    <p class="font-serif text-xl text-white">HSR Dining Hall</p>
                 </div>
             </div>
+            <div class="relative overflow-hidden group reveal delay-200 cursor-pointer rounded-lg">
+                <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&h=400&fit=crop&q=80"
+                    alt="Living Room"
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 group-hover:brightness-75" />
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                    <p class="text-[0.6rem] tracking-[0.25em] uppercase text-brand-orange mb-1">Living Room</p>
+                    <p class="font-serif text-xl text-white">Indiranagar Penthouse</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-10 md:hidden reveal">
+            <a href="portfolio.html"
+                class="inline-flex items-center gap-2 text-xs tracking-widest uppercase font-bold text-brand-dark border-b-2 border-brand-orange pb-1 hover:text-brand-orange transition-colors">
+                View All Projects
+                <svg class="w-4 h-4" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M1 7h12M8 3l4 4-4 4" />
+                </svg>
+            </a>
         </div>
     </section>
 
@@ -815,49 +873,90 @@
                 <div class="relative h-full min-h-[400px] lg:min-h-full overflow-hidden group">
                     <img src="assets/enquiry_promo.png" alt="Furniture Sale"
                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/40 via-transparent to-transparent"></div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/40 to-brand-dark/15">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/30 to-transparent"></div>
+
+                    <div class="absolute inset-0 p-8 md:p-10 flex flex-col justify-between">
+                        <div class="mt-4">
+                            <span
+                                class="inline-block bg-white/10 backdrop-blur-md border border-white/15 text-[0.6rem] tracking-[0.25em] uppercase text-white/80 font-semibold px-4 py-2 rounded-full">Thoughtful
+                                Design · Timeless Spaces</span>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-2xl md:text-3xl text-white mb-3 leading-tight"
+                                style="text-shadow: 0 2px 20px rgba(0,0,0,0.3)">Let's make your space <em
+                                    class="text-brand-orange">extraordinary.</em></h3>
+                            <p class="text-white/60 text-sm max-w-xs">Book your free consultation and let our designers
+                                craft your dream home.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Right: Enquiry Form -->
-                <div class="p-8 md:p-12 lg:p-16">
-                    <div class="mb-10">
-                        <h2 class="font-serif text-3xl md:text-4xl text-brand-dark mb-4">Free Design <em class="text-brand-orange">Consultation</em></h2>
-                        <p class="text-brand-muted text-sm">Tell us about your space and we'll reach out to schedule your session.</p>
+                <div class="p-8 md:p-12 lg:p-16 relative overflow-hidden">
+                    <div id="home-form-wrap">
+                        <div class="mb-10">
+                            <h2 class="font-serif text-3xl md:text-4xl text-brand-dark mb-4">Free Design <em
+                                    class="text-brand-orange">Consultation</em></h2>
+                            <p class="text-brand-muted text-sm">Tell us about your space and we'll reach out to schedule
+                                your session.</p>
+                        </div>
+
+                        <form onsubmit="handleForm(event)" class="space-y-6">
+                            <div>
+                                <label
+                                    class="block text-[0.6rem] tracking-widest uppercase text-brand-muted mb-2 font-semibold">Your Name</label>
+                                <input type="text" name="fullName" class="f-input" placeholder="Priya Sharma" required />
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-[0.6rem] tracking-widest uppercase text-brand-muted mb-2 font-semibold">Phone
+                                    Number</label>
+                                <input type="tel" name="phone" class="f-input" placeholder="+91 8884651111" required />
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-[0.6rem] tracking-widest uppercase text-brand-muted mb-2 font-semibold">Project
+                                    Type</label>
+                                <select name="projectType" required
+                                    class="f-input cursor-pointer appearance-none bg-transparent">
+                                    <option value="" disabled selected>Select a service</option>
+                                    <option>Full Home Interior</option>
+                                    <option>Single Room Makeover</option>
+                                    <option>Kitchen Design</option>
+                                    <option>Bedroom Design</option>
+                                    <option>Commercial Space</option>
+                                </select>
+                            </div>
+
+                            <button type="submit"
+                                class="f-submit w-full bg-brand-dark text-white py-4 text-xs tracking-widest uppercase font-bold hover:bg-brand-orange transition-all duration-300 shadow-lg shadow-brand-dark/10">Book
+                                Free Consultation</button>
+                            <p class="text-[0.6rem] text-brand-muted text-center pt-2 italic">By submitting, you agree to
+                                our <a href="privacy-policy.html" class="underline hover:text-brand-orange">Privacy
+                                    Policy</a></p>
+                        </form>
                     </div>
 
-                    <form onsubmit="handleForm(event)" class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-[0.6rem] tracking-widest uppercase text-brand-muted mb-2 font-semibold">First Name</label>
-                                <input type="text" class="f-input" placeholder="Priya" required />
-                            </div>
-                            <div>
-                                <label class="block text-[0.6rem] tracking-widest uppercase text-brand-muted mb-2 font-semibold">Last Name</label>
-                                <input type="text" class="f-input" placeholder="Sharma" required />
-                            </div>
+                    <!-- Thank You Message (hidden by default) -->
+                    <div id="home-thankyou" class="absolute inset-0 flex flex-col items-center justify-center p-8 md:p-12 bg-white opacity-0 pointer-events-none transition-all duration-700" style="transform: translateY(30px)">
+                        <div class="thankyou-check mb-6">
+                            <svg class="w-20 h-20" viewBox="0 0 80 80" fill="none">
+                                <circle class="check-circle" cx="40" cy="40" r="36" stroke="#C85A17" stroke-width="3" />
+                                <path class="check-mark" d="M24 42 L35 53 L56 28" stroke="#C85A17" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                            </svg>
                         </div>
-                        <div>
-                            <label class="block text-[0.6rem] tracking-widest uppercase text-brand-muted mb-2 font-semibold">Phone Number</label>
-                            <input type="tel" class="f-input" placeholder="+91 8884651111" required />
+                        <h3 class="font-serif text-3xl md:text-4xl text-brand-dark mb-3 thankyou-text">Thank <em class="text-brand-orange">You!</em></h3>
+                        <p class="text-brand-muted text-sm text-center max-w-xs mb-6 thankyou-text" style="animation-delay: 0.2s">Your consultation request has been received. Our design team will reach out within 24 hours.</p>
+                        <div class="flex items-center gap-3 thankyou-text" style="animation-delay: 0.4s">
+                            <a href="tel:+918884651111" class="flex items-center gap-2 text-xs tracking-widest uppercase font-bold text-brand-dark border-b-2 border-brand-orange pb-1 hover:text-brand-orange transition-colors">
+                                <svg class="w-4 h-4 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                Call Us Now
+                            </a>
                         </div>
-                        <div>
-                            <label class="block text-[0.6rem] tracking-widest uppercase text-brand-muted mb-2 font-semibold">Project Type</label>
-                            <select required class="f-input cursor-pointer appearance-none bg-transparent">
-                                <option value="" disabled selected>Select a service</option>
-                                <option>Full Home Interior</option>
-                                <option>Single Room Makeover</option>
-                                <option>Kitchen Design</option>
-                                <option>Bedroom Design</option>
-                                <option>Commercial Space</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-[0.6rem] tracking-widest uppercase text-brand-muted mb-2 font-semibold">Your Vision</label>
-                            <textarea rows="3" class="f-input resize-none" placeholder="Describe your dream space..."></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-brand-dark text-white py-4 text-xs tracking-widest uppercase font-bold hover:bg-brand-orange transition-all duration-300 shadow-lg shadow-brand-dark/10">Book Free Consultation</button>
-                        <p class="text-[0.6rem] text-brand-muted text-center pt-2 italic">By submitting, you agree to our <a href="privacy-policy.html" class="underline hover:text-brand-orange">Privacy Policy</a></p>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -976,12 +1075,59 @@
             });
         });
 
+        const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbzh7gWJD_dC7aqlBDPKAjWvQxCYX0MZRHWe_oOvw6ie0l6aUk7Ligu4sjRKTHM8PtUR/exec';
+
+        function showThankYou(formWrapId, thankYouId) {
+            const formWrap = document.getElementById(formWrapId);
+            const thankYou = document.getElementById(thankYouId);
+            if (formWrap && thankYou) {
+                formWrap.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                formWrap.style.opacity = '0';
+                formWrap.style.transform = 'translateY(-20px)';
+                setTimeout(() => {
+                    formWrap.style.display = 'none';
+                    thankYou.classList.remove('opacity-0', 'pointer-events-none');
+                    thankYou.style.transform = 'translateY(0)';
+                    thankYou.style.position = 'relative';
+                }, 400);
+            }
+        }
+
         function handleForm(e) {
             e.preventDefault();
-            const btn = e.target.querySelector('.f-submit');
-            btn.textContent = "Submitted! We'll be in touch.";
-            btn.style.backgroundColor = "#2D6A4F";
-            btn.style.pointerEvents = "none";
+            const form = e.target;
+            const btn = form.querySelector('.f-submit');
+            const originalText = btn.textContent;
+
+            btn.textContent = 'Sending...';
+            btn.style.pointerEvents = 'none';
+            btn.style.opacity = '0.7';
+
+            const payload = {
+                name: form.querySelector('[name="fullName"]')?.value || '',
+                phone: form.querySelector('[name="phone"]')?.value || '',
+                email: '',
+                service: form.querySelector('[name="projectType"]')?.value || '',
+                message: '',
+                source: 'Homepage'
+            };
+
+            fetch(GOOGLE_SHEET_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                body: JSON.stringify(payload)
+            })
+                .then(() => {
+                    form.reset();
+                    showThankYou('home-form-wrap', 'home-thankyou');
+                })
+                .catch(() => {
+                    btn.textContent = originalText;
+                    btn.style.pointerEvents = 'auto';
+                    btn.style.opacity = '1';
+                    alert('Something went wrong. Please try again or call us at +91 8884651111.');
+                });
         }
     </script>
 </body>
