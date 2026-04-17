@@ -918,6 +918,11 @@
                             </div>
                             <div>
                                 <label
+                                    class="block text-[0.6rem] tracking-widest uppercase text-brand-muted mb-2 font-semibold">Email</label>
+                                <input type="email" name="email" class="f-input" placeholder="you@example.com" required />
+                            </div>
+                            <div>
+                                <label
                                     class="block text-[0.6rem] tracking-widest uppercase text-brand-muted mb-2 font-semibold">Project
                                     Type</label>
                                 <select name="projectType" required
@@ -1106,7 +1111,7 @@
             const payload = {
                 name: form.querySelector('[name="fullName"]')?.value || '',
                 phone: form.querySelector('[name="phone"]')?.value || '',
-                email: '',
+                email: form.querySelector('[name="email"]')?.value || '',
                 service: form.querySelector('[name="projectType"]')?.value || '',
                 message: '',
                 source: 'Homepage'
