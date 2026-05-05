@@ -664,15 +664,15 @@
         };
 
         // Selection Handlers
-        function selectProperty(val, el) {
+        function selectProperty(val, el, skipAdvance = false) {
             state.property = val;
             document.querySelectorAll('#step-1 .card-select').forEach(card => card.classList.remove('selected'));
             el.classList.add('selected');
             updateNavState();
-            setTimeout(() => nextStep(), 400); // Auto-advance for better UX
+            if (!skipAdvance) setTimeout(() => nextStep(), 400); // Auto-advance for better UX
         }
 
-        function selectBHK(val, el) {
+        function selectBHK(val, el, skipAdvance = false) {
             state.bhk = val;
             document.querySelectorAll('#step-2 .card-select').forEach(card => card.classList.remove('selected'));
             el.classList.add('selected');
@@ -700,7 +700,7 @@
             }
 
             updateNavState();
-            setTimeout(() => nextStep(), 400); // Auto-advance for better UX
+            if (!skipAdvance) setTimeout(() => nextStep(), 400); // Auto-advance for better UX
         }
 
         function updateArea(val) {
@@ -715,12 +715,12 @@
             updateNavState();
         }
 
-        function selectPackage(val, el) {
+        function selectPackage(val, el, skipAdvance = false) {
             state.package = val;
             document.querySelectorAll('#step-4 .card-select').forEach(card => card.classList.remove('selected'));
             el.classList.add('selected');
             updateNavState();
-            setTimeout(() => nextStep(), 400); // Auto-advance
+            if (!skipAdvance) setTimeout(() => nextStep(), 400); // Auto-advance
         }
 
         // Navigation Logic
@@ -935,7 +935,7 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             const defaultCard = document.getElementById('default-package');
-            selectPackage('Premium', defaultCard);
+            if (defaultCard) selectPackage('Premium', defaultCard, true); // skipAdvance: true to prevent jumping steps on load
 
             // Mobile Menu Logic
             const hamBtn = document.getElementById('ham-btn');
