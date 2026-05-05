@@ -1,68 +1,156 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>About Timberlane | Leading Interior Design Company</title>
-    <meta name="description" content="With 8+ years of industry experience and 200+ satisfied clients, Timberlane Interiors stands for trust, transparency and consistent quality work." />
+    <meta name="description"
+        content="With 8+ years of industry experience and 200+ satisfied clients, Timberlane Interiors stands for trust, transparency and consistent quality work." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
+        rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = { theme: { extend: { colors: { brand: { orange: '#C85A17', dark: '#2A2C2E', cream: '#FDFBF7', warm: '#F4F0EA', muted: '#8A817C' } }, fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] } } } }
     </script>
     <style>
-        body { background-color: #FDFBF7; color: #2A2C2E; }
-        #prog { position: fixed; top: 0; left: 0; height: 3px; z-index: 1000; background: #C85A17; width: 0; transition: width 0.1s ease-out; }
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
-        .reveal.in { opacity: 1; transform: translateY(0); }
-        .delay-100 { transition-delay: 100ms; } .delay-200 { transition-delay: 200ms; } .delay-300 { transition-delay: 300ms; }
-        #nav { transition: all 0.4s ease; }
-        #nav.solid { background: rgba(253, 251, 247, 0.95); backdrop-filter: blur(10px); box-shadow: 0 4px 30px rgba(0,0,0,0.03); padding-top: 0.75rem; padding-bottom: 0.75rem; }
+        body {
+            background-color: #FDFBF7;
+            color: #2A2C2E;
+        }
+
+        #prog {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            z-index: 1000;
+            background: #C85A17;
+            width: 0;
+            transition: width 0.1s ease-out;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-100 {
+            transition-delay: 100ms;
+        }
+
+        .delay-200 {
+            transition-delay: 200ms;
+        }
+
+        .delay-300 {
+            transition-delay: 300ms;
+        }
+
+        #nav {
+            background: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+        }
     </style>
     <link rel="canonical" href="https://timberlane.co.in/about" />
 </head>
+
 <body class="overflow-x-hidden font-sans antialiased selection:bg-brand-orange selection:text-white">
     <div id="prog"></div>
 
-    <nav id="nav" class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 md:px-12 py-3 bg-transparent">
-        <a href="index.html" class="flex-shrink-0 relative z-50"><img src="assets/logo.png" alt="Timberlane Interiors Logo" class="h-8 md:h-14 object-contain transition-all duration-300"></a>
-        <ul class="hidden lg:flex items-center gap-8 xl:gap-12">
-            <li><a href="index.html" class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Home</a></li>
-            <li><a href="about.html" class="text-xs uppercase tracking-widest font-semibold text-brand-orange transition-colors">About</a></li>
-            <li><a href="services.html" class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Services</a></li>
-            <li><a href="portfolio.html" class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Portfolio</a></li>
-            <li><a href="blog.html" class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Blog</a></li>
-            <li><a href="packages.html" class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Packages</a></li>
-            <li><a href="contact.html" class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Contact</a></li>
+    <nav id="nav"
+        class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 md:px-12 py-2">
+        <a href="index.html" class="flex-shrink-0 relative z-50"><img src="assets/logo.png"
+                alt="Timberlane Interiors Logo" class="h-8 md:h-14 object-contain transition-all duration-300"></a>
+        <ul class="hidden lg:flex items-center gap-6 xl:gap-8">
+            <li><a href="index.html"
+                    class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Home</a>
+            </li>
+            <li><a href="about.html"
+                    class="text-xs uppercase tracking-widest font-semibold text-brand-orange transition-colors">About</a>
+            </li>
+            <li><a href="services.html"
+                    class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Services</a>
+            </li>
+            <li><a href="portfolio.html"
+                    class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Portfolio</a>
+            </li>
+            <li><a href="blog.html"
+                    class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Blog</a>
+            </li>
+            <li><a href="packages.html"
+                    class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Packages</a>
+            </li>
+            <li><a href="estimator.html"
+                    class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Estimator</a>
+            </li>
+            <li><a href="contact.html"
+                    class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Contact</a>
+            </li>
         </ul>
         <div class="hidden lg:flex items-center gap-6">
-            <a href="tel:+918884651111" class="flex items-center gap-2 text-sm font-semibold hover:text-brand-orange transition-colors"><svg class="w-4 h-4 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>+91 8884651111</a>
-            <a href="contact.html" class="flex items-center gap-2 border border-brand-orange text-brand-orange px-6 py-3 text-xs uppercase tracking-[0.15em] font-bold hover:bg-brand-orange hover:text-white transition-all duration-300">Get Your Design <svg class="w-3 h-3" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 3l4 4-4 4" /></svg></a>
+            <a href="tel:+918884651111"
+                class="flex items-center gap-2 text-sm font-semibold hover:text-brand-orange transition-colors"><svg
+                    class="w-4 h-4 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                    </path>
+                </svg>+91 8884651111</a>
+            <a href="contact.html"
+                class="flex items-center gap-2 border border-brand-orange text-brand-orange px-6 py-3 text-xs uppercase tracking-[0.15em] font-bold hover:bg-brand-orange hover:text-white transition-all duration-300">Get
+                Your Design <svg class="w-3 h-3" viewBox="0 0 14 14" fill="none" stroke="currentColor"
+                    stroke-width="1.5">
+                    <path d="M1 7h12M8 3l4 4-4 4" />
+                </svg></a>
         </div>
         <button id="ham-btn" class="lg:hidden flex flex-col justify-center items-center w-8 h-8 z-50 group">
-            <span class="w-6 h-[1.5px] bg-brand-dark block transition-all duration-300 group-[.active]:rotate-45 group-[.active]:translate-y-[6px]"></span>
-            <span class="w-6 h-[1.5px] bg-brand-dark block my-1.5 transition-all duration-300 group-[.active]:opacity-0"></span>
-            <span class="w-6 h-[1.5px] bg-brand-dark block transition-all duration-300 group-[.active]:-rotate-45 group-[.active]:-translate-y-[6px]"></span>
+            <span
+                class="w-6 h-[1.5px] bg-brand-dark block transition-all duration-300 group-[.active]:rotate-45 group-[.active]:translate-y-[6px]"></span>
+            <span
+                class="w-6 h-[1.5px] bg-brand-dark block my-1.5 transition-all duration-300 group-[.active]:opacity-0"></span>
+            <span
+                class="w-6 h-[1.5px] bg-brand-dark block transition-all duration-300 group-[.active]:-rotate-45 group-[.active]:-translate-y-[6px]"></span>
         </button>
     </nav>
-    <div id="mobile-drawer" class="fixed inset-0 bg-brand-cream z-40 flex flex-col justify-center items-center gap-8 opacity-0 pointer-events-none transition-opacity duration-300 [&.open]:opacity-100 [&.open]:pointer-events-auto">
-        <a href="index.html" class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Home</a>
+    <div id="mobile-drawer"
+        class="fixed inset-0 bg-brand-cream z-40 flex flex-col justify-center items-center gap-8 opacity-0 pointer-events-none transition-opacity duration-300 [&.open]:opacity-100 [&.open]:pointer-events-auto">
+        <a href="index.html"
+            class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Home</a>
         <a href="about.html" class="font-serif text-3xl text-brand-orange">About</a>
-        <a href="services.html" class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Services</a>
-        <a href="portfolio.html" class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Portfolio</a>
-        <a href="blog.html" class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Blog</a>
-        <a href="packages.html" class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Packages</a>
-        
-        <a href="contact.html" class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Contact</a>
+        <a href="services.html"
+            class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Services</a>
+        <a href="portfolio.html"
+            class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Portfolio</a>
+        <a href="blog.html"
+            class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Blog</a>
+        <a href="packages.html"
+            class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Packages</a>
+        <a href="estimator.html"
+            class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Estimator</a>
+
+        <a href="contact.html"
+            class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Contact</a>
     </div>
 
     <!-- PAGE HERO -->
     <header class="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-brand-warm">
         <div class="max-w-7xl mx-auto px-6 md:px-12">
             <p class="text-[0.65rem] tracking-[0.35em] uppercase text-brand-orange mb-4 reveal">Who We Are</p>
-            <h1 class="font-serif text-5xl md:text-7xl text-brand-dark reveal delay-100">About <em class="text-brand-orange">Timberlane</em></h1>
+            <h1 class="font-serif text-5xl md:text-7xl text-brand-dark reveal delay-100">About <em
+                    class="text-brand-orange">Timberlane</em></h1>
         </div>
     </header>
 
@@ -72,8 +160,10 @@
             <div class="relative">
                 <div class="absolute -inset-4 bg-brand-warm rounded-full blur-3xl opacity-50 -z-10"></div>
                 <div class="grid grid-cols-2 gap-4">
-                    <img src="assets/about_1.png" alt="Timberlane kitchen interior" class="w-full h-64 md:h-96 object-cover rounded-tl-[4rem] rounded-br-[4rem] reveal" />
-                    <img src="assets/about_2.png" alt="Timberlane bedroom interior" class="w-full h-64 md:h-96 object-cover rounded-tr-[4rem] rounded-bl-[4rem] mt-8 reveal delay-200" />
+                    <img src="assets/about_1.png" alt="Timberlane kitchen interior"
+                        class="w-full h-64 md:h-96 object-cover rounded-tl-[4rem] rounded-br-[4rem] reveal" />
+                    <img src="assets/about_2.png" alt="Timberlane bedroom interior"
+                        class="w-full h-64 md:h-96 object-cover rounded-tr-[4rem] rounded-bl-[4rem] mt-8 reveal delay-200" />
                 </div>
             </div>
             <div>
@@ -82,24 +172,43 @@
                     <p class="text-[0.65rem] tracking-[0.3em] uppercase text-brand-orange font-semibold">Our Story</p>
                 </div>
                 <h2 class="font-serif text-4xl md:text-5xl leading-[1.1] text-brand-dark mb-8 reveal delay-100">
-                    Interior design is more than aesthetics. <br><em class="text-brand-orange">It's creating spaces that feel like you.</em>
+                    Interior design is more than aesthetics. <br><em class="text-brand-orange">It's creating spaces that
+                        feel like you.</em>
                 </h2>
                 <p class="text-brand-muted leading-relaxed mb-6 reveal delay-200 text-sm md:text-base max-w-lg">
-                    We create spaces that inspire, function beautifully, and reflect the people who live or work in them. Every project is a deeply personal collaboration between our designers and you.
+                    We create spaces that inspire, function beautifully, and reflect the people who live or work in
+                    them. Every project is a deeply personal collaboration between our designers and you.
                 </p>
                 <p class="text-brand-muted leading-relaxed mb-10 reveal delay-200 text-sm md:text-base max-w-lg">
-                    Founded in 2018 in Bangalore, Timberlane Interiors has grown from a small studio into a team of 14 expert designers. We've completed over 200 projects, each one a testament to our belief that great design changes lives.
+                    Founded in 2018 in Bangalore, Timberlane Interiors has grown from a small studio into a team of 14
+                    expert designers. We've completed over 200 projects, each one a testament to our belief that great
+                    design changes lives.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-6 items-start sm:items-center reveal delay-300">
-                    <a href="assets/company_profile.pdf" download class="flex items-center gap-2 bg-brand-dark text-white px-6 py-3 text-xs tracking-widest uppercase font-semibold hover:bg-brand-orange hover:-translate-y-1 transition-all shadow-lg shadow-brand-dark/20">
+                    <a href="assets/company_profile.pdf" download
+                        class="flex items-center gap-2 bg-brand-dark text-white px-6 py-3 text-xs tracking-widest uppercase font-semibold hover:bg-brand-orange hover:-translate-y-1 transition-all shadow-lg shadow-brand-dark/20">
                         Download Profile
-                        <svg class="w-4 h-4" viewBox="0 0 16 16" fill="currentColor"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" /><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" /></svg>
+                        <svg class="w-4 h-4" viewBox="0 0 16 16" fill="currentColor">
+                            <path
+                                d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                            <path
+                                d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+                        </svg>
                     </a>
                 </div>
                 <div class="grid grid-cols-3 gap-8 mt-16 pt-10 border-t border-brand-dark/10 reveal delay-300">
-                    <div><p class="font-serif text-4xl lg:text-5xl text-brand-orange mb-2">8</p><p class="text-xs text-brand-muted leading-relaxed">Years reimagining spaces.</p></div>
-                    <div><p class="font-serif text-4xl lg:text-5xl text-brand-orange mb-2">14</p><p class="text-xs text-brand-muted leading-relaxed">Expert designers.</p></div>
-                    <div><p class="font-serif text-4xl lg:text-5xl text-brand-orange mb-2">200+</p><p class="text-xs text-brand-muted leading-relaxed">Satisfied clients.</p></div>
+                    <div>
+                        <p class="font-serif text-4xl lg:text-5xl text-brand-orange mb-2">8</p>
+                        <p class="text-xs text-brand-muted leading-relaxed">Years reimagining spaces.</p>
+                    </div>
+                    <div>
+                        <p class="font-serif text-4xl lg:text-5xl text-brand-orange mb-2">14</p>
+                        <p class="text-xs text-brand-muted leading-relaxed">Expert designers.</p>
+                    </div>
+                    <div>
+                        <p class="font-serif text-4xl lg:text-5xl text-brand-orange mb-2">200+</p>
+                        <p class="text-xs text-brand-muted leading-relaxed">Satisfied clients.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -109,21 +218,25 @@
     <section class="py-24 bg-brand-dark text-white">
         <div class="max-w-7xl mx-auto px-6 md:px-12">
             <div class="text-center mb-16 reveal">
-                <p class="text-[0.65rem] tracking-[0.3em] uppercase text-brand-orange font-semibold mb-4">What Drives Us</p>
+                <p class="text-[0.65rem] tracking-[0.3em] uppercase text-brand-orange font-semibold mb-4">What Drives Us
+                </p>
                 <h2 class="font-serif text-4xl md:text-5xl">Our Core <em class="text-white/70">Values</em></h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="p-10 border border-white/10 hover:bg-white/5 transition-colors reveal">
                     <h3 class="font-serif text-2xl mb-4">Collaboration</h3>
-                    <p class="text-sm text-white/60 leading-relaxed">Every design begins with listening. We believe the best spaces emerge from deep collaboration with our clients.</p>
+                    <p class="text-sm text-white/60 leading-relaxed">Every design begins with listening. We believe the
+                        best spaces emerge from deep collaboration with our clients.</p>
                 </div>
                 <div class="p-10 border border-white/10 hover:bg-white/5 transition-colors reveal delay-100">
                     <h3 class="font-serif text-2xl mb-4">Craftsmanship</h3>
-                    <p class="text-sm text-white/60 leading-relaxed">We obsess over every detail — from the grain of the wood to the angle of light — to create spaces of lasting beauty.</p>
+                    <p class="text-sm text-white/60 leading-relaxed">We obsess over every detail — from the grain of the
+                        wood to the angle of light — to create spaces of lasting beauty.</p>
                 </div>
                 <div class="p-10 border border-white/10 hover:bg-white/5 transition-colors reveal delay-200">
                     <h3 class="font-serif text-2xl mb-4">Innovation</h3>
-                    <p class="text-sm text-white/60 leading-relaxed">We blend timeless aesthetics with modern technology and sustainable practices to push the boundaries of design.</p>
+                    <p class="text-sm text-white/60 leading-relaxed">We blend timeless aesthetics with modern technology
+                        and sustainable practices to push the boundaries of design.</p>
                 </div>
             </div>
         </div>
@@ -132,9 +245,13 @@
     <!-- CTA -->
     <section class="py-24 bg-brand-cream text-center">
         <div class="max-w-2xl mx-auto px-6 reveal">
-            <h2 class="font-serif text-4xl md:text-5xl text-brand-dark mb-6">Ready to Start <em class="text-brand-orange">Your Project?</em></h2>
-            <p class="text-brand-muted text-sm md:text-base mb-10">Let's discuss how we can bring your vision to life. Book a free consultation today.</p>
-            <a href="contact.html" class="inline-block bg-brand-dark text-white text-xs tracking-[0.2em] uppercase px-8 py-4 hover:bg-brand-orange transition-colors duration-300">Book Consultation</a>
+            <h2 class="font-serif text-4xl md:text-5xl text-brand-dark mb-6">Ready to Start <em
+                    class="text-brand-orange">Your Project?</em></h2>
+            <p class="text-brand-muted text-sm md:text-base mb-10">Let's discuss how we can bring your vision to life.
+                Book a free consultation today.</p>
+            <a href="contact.html"
+                class="inline-block bg-brand-dark text-white text-xs tracking-[0.2em] uppercase px-8 py-4 hover:bg-brand-orange transition-colors duration-300">Book
+                Consultation</a>
         </div>
     </section>
 
@@ -143,8 +260,11 @@
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 pb-16 border-b border-white/10">
                 <div class="lg:col-span-2">
-                    <a href="index.html" class="block font-sans font-bold text-sm tracking-widest uppercase text-brand-orange mb-6">Timberlane Interiors</a>
-                    <p class="text-sm text-white/50 leading-relaxed max-w-sm">We design the feeling of you — luxury interior design studio based in Bangalore, India. Crafting bespoke spaces since 2018.</p>
+                    <a href="index.html"
+                        class="block font-sans font-bold text-sm tracking-widest uppercase text-brand-orange mb-6">Timberlane
+                        Interiors</a>
+                    <p class="text-sm text-white/50 leading-relaxed max-w-sm">We design the feeling of you — luxury
+                        interior design studio based in Bangalore, India. Crafting bespoke spaces since 2018.</p>
                 </div>
                 <div>
                     <h4 class="text-[0.65rem] tracking-widest uppercase text-white/40 font-semibold mb-6">Navigate</h4>
@@ -152,7 +272,8 @@
                         <li><a href="index.html" class="hover:text-brand-orange transition-colors">Home</a></li>
                         <li><a href="about.html" class="hover:text-brand-orange transition-colors">About</a></li>
                         <li><a href="services.html" class="hover:text-brand-orange transition-colors">Services</a></li>
-                        <li><a href="portfolio.html" class="hover:text-brand-orange transition-colors">Portfolio</a></li>
+                        <li><a href="portfolio.html" class="hover:text-brand-orange transition-colors">Portfolio</a>
+                        </li>
                         <li><a href="blog.html" class="hover:text-brand-orange transition-colors">Blog</a></li>
                         <li><a href="contact.html" class="hover:text-brand-orange transition-colors">Contact</a></li>
                     </ul>
@@ -160,11 +281,16 @@
                 <div>
                     <h4 class="text-[0.65rem] tracking-widest uppercase text-white/40 font-semibold mb-6">Services</h4>
                     <ul class="space-y-4 text-sm text-white/70">
-                        <li><a href="services.html" class="hover:text-brand-orange transition-colors">Full Home Design</a></li>
-                        <li><a href="services.html" class="hover:text-brand-orange transition-colors">Kitchen Interiors</a></li>
-                        <li><a href="services.html" class="hover:text-brand-orange transition-colors">Bedroom Design</a></li>
-                        <li><a href="services.html" class="hover:text-brand-orange transition-colors">Commercial Spaces</a></li>
-                        <li><a href="services.html" class="hover:text-brand-orange transition-colors">Vastu Consulting</a></li>
+                        <li><a href="services.html" class="hover:text-brand-orange transition-colors">Full Home
+                                Design</a></li>
+                        <li><a href="services.html" class="hover:text-brand-orange transition-colors">Kitchen
+                                Interiors</a></li>
+                        <li><a href="services.html" class="hover:text-brand-orange transition-colors">Bedroom Design</a>
+                        </li>
+                        <li><a href="services.html" class="hover:text-brand-orange transition-colors">Commercial
+                                Spaces</a></li>
+                        <li><a href="services.html" class="hover:text-brand-orange transition-colors">Vastu
+                                Consulting</a></li>
                     </ul>
                 </div>
                 <div>
@@ -172,21 +298,28 @@
                     <ul class="space-y-4 text-sm text-white/70">
                         <li><a href="#" class="hover:text-brand-orange transition-colors">Instagram</a></li>
                         <li><a href="#" class="hover:text-brand-orange transition-colors">Houzz</a></li>
-                        <li><a href="https://wa.me/918884651111" class="hover:text-brand-orange transition-colors">WhatsApp</a></li>
-                        <li><a href="mailto:info@timberlane.co.in" class="hover:text-brand-orange transition-colors">Email Us</a></li>
+                        <li><a href="https://wa.me/918884651111"
+                                class="hover:text-brand-orange transition-colors">WhatsApp</a></li>
+                        <li><a href="mailto:info@timberlane.co.in"
+                                class="hover:text-brand-orange transition-colors">Email Us</a></li>
                     </ul>
                 </div>
             </div>
             <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 text-xs text-white/30">
                 <p>&copy; 2026 Timberlane Interiors. All rights reserved.</p>
-                <a href="privacy-policy.html" class="text-white/30 hover:text-brand-orange transition-colors">Privacy Policy</a>
+                <a href="privacy-policy.html" class="text-white/30 hover:text-brand-orange transition-colors">Privacy
+                    Policy</a>
                 <p class="tracking-widest uppercase">We Design The Feeling of You</p>
             </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/918884651111" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" class="fixed bottom-6 right-6 z-40 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform duration-300">
-        <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
+    <a href="https://wa.me/918884651111" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
+        class="fixed bottom-6 right-6 z-40 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform duration-300">
+        <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
     </a>
 
     <script>
@@ -194,9 +327,9 @@
             window.addEventListener('scroll', () => {
                 const scrollY = window.scrollY;
                 const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-                if(scrollHeight > 0) document.getElementById('prog').style.width = ((scrollY / scrollHeight) * 100) + '%';
+                if (scrollHeight > 0) document.getElementById('prog').style.width = ((scrollY / scrollHeight) * 100) + '%';
                 const nav = document.getElementById('nav');
-                scrollY > 60 ? nav.classList.add('solid') : nav.classList.remove('solid');
+                nav.classList.add('solid');
                 document.querySelectorAll('.reveal').forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight - 80) el.classList.add('in'); });
             });
             window.dispatchEvent(new Event('scroll'));
@@ -205,5 +338,7 @@
             drawer.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { hamBtn.classList.remove('active'); drawer.classList.remove('open'); document.body.classList.remove('overflow-hidden'); }); });
         });
     </script>
+    <script src="main.js"></script>
 </body>
+
 </html>

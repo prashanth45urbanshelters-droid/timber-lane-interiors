@@ -1,0 +1,23 @@
+RewriteEngine On
+RewriteBase /
+
+# 1. Redirect /index.html and /index to /
+# This ensures that users always see the cleanest version of the homepage.
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.(html|php)\ HTTP/ [NC]
+RewriteRule ^index\.(html|php)$ / [R=301,L]
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\ HTTP/ [NC]
+RewriteRule ^index$ / [R=301,L]
+
+# 2. Redirect /page.html to /page
+# This ensures that any old .html links from external sources or search engines are redirected.
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^.]+)\.html\ HTTP/ [NC]
+RewriteRule ^([^.]+)\.html$ /$1 [R=301,L]
+
+# 3. Internally serve /page as /page.html
+# This allows the clean URLs to work while keeping the actual files as .html on the server.
+# It checks if the requested URL (without .html) is NOT a file or directory, and if adding .html results in a valid file.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^/]+)/?$ $1.html [L]

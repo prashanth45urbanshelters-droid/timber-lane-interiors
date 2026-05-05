@@ -20,12 +20,12 @@ const contact = contactMatch ? contactMatch[0].replace('<!-- FOOTER -->', '') : 
 let before = html.substring(0, html.indexOf('<!-- HERO -->'));
 const after = html.substring(html.indexOf('<!-- FOOTER -->'));
 
-let navUpdated = before.replace(/href="#about"/g, 'href="about.html"')
-    .replace(/href="#process"/g, 'href="services.html"')
-    .replace(/href="#portfolio"/g, 'href="portfolio.html"')
-    .replace(/href="#packages"/g, 'href="packages.html"')
-    .replace(/href="#contact"/g, 'href="contact.html"')
-    .replace(/href="#"/g, 'href="index.html"');
+let navUpdated = before.replace(/href="#about"/g, 'href="about"')
+    .replace(/href="#process"/g, 'href="services"')
+    .replace(/href="#portfolio"/g, 'href="portfolio"')
+    .replace(/href="#packages"/g, 'href="packages"')
+    .replace(/href="#contact"/g, 'href="contact"')
+    .replace(/href="#"/g, 'href="/"');
 
 const writePage = (name, content) => {
     fs.writeFileSync(name, navUpdated + content + after);

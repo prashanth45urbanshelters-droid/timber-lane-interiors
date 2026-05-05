@@ -1,53 +1,138 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>The Evolution of Luxury: Sustainable Materials — Timberlane Interiors</title>
-    <meta name="description" content="Discover how eco-conscious choices are redefining high-end interiors, from reclaimed marble to organic textiles." />
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+    <meta name="description"
+        content="Discover how eco-conscious choices are redefining high-end interiors, from reclaimed marble to organic textiles." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
+        rel="stylesheet" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config={theme:{extend:{colors:{brand:{orange:'#C85A17',dark:'#2A2C2E',cream:'#FDFBF7',warm:'#F4F0EA',muted:'#8A817C'}},fontFamily:{sans:['Inter','sans-serif'],serif:['Playfair Display','serif']}}}}</script>
-    <style>body{background-color:#FDFBF7;color:#2A2C2E}#prog{position:fixed;top:0;left:0;height:3px;z-index:1000;background:#C85A17;width:0;transition:width .1s ease-out}#nav{transition:all .4s ease}#nav.solid{background:rgba(253,251,247,.95);backdrop-filter:blur(10px);box-shadow:0 4px 30px rgba(0,0,0,.03);padding-top:1rem;padding-bottom:1rem}</style>
+    <script>tailwind.config = { theme: { extend: { colors: { brand: { orange: '#C85A17', dark: '#2A2C2E', cream: '#FDFBF7', warm: '#F4F0EA', muted: '#8A817C' } }, fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] } } } }</script>
+    <style>
+        body {
+            background-color: #FDFBF7;
+            color: #2A2C2E
+        }
+
+        #prog {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            z-index: 1000;
+            background: #C85A17;
+            width: 0;
+            transition: width .1s ease-out
+        }
+
+        #nav {
+            background: rgba(253, 251, 247, .95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, .03);
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem
+        }
+    </style>
 </head>
+
 <body class="overflow-x-hidden font-sans antialiased selection:bg-brand-orange selection:text-white">
     <div id="prog"></div>
-    <nav id="nav" class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 md:px-12 py-3 bg-brand-cream/95 backdrop-blur-md border-b border-brand-dark/5">
-        <a href="index.html" class="flex-shrink-0 relative z-50"><img src="assets/logo.png" alt="Timberlane Interiors Logo" class="h-8 md:h-14 object-contain transition-all duration-300"></a>
+    <nav id="nav"
+        class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 md:px-12 py-2">
+        <a href="/" class="flex-shrink-0 relative z-50"><img src="assets/logo.png" alt="Timberlane Interiors Logo"
+                class="h-8 md:h-14 object-contain transition-all duration-300"></a>
         <ul class="hidden lg:flex items-center gap-8 xl:gap-12">
-            <li><a href="index.html" class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Home</a></li>
-            <li><a href="about.html" class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">About</a></li>
-            <li><a href="services.html" class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Services</a></li>
-            <li><a href="portfolio.html" class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Portfolio</a></li>
-            <li><a href="blog.html" class="text-xs uppercase tracking-widest font-semibold text-brand-orange transition-colors">Blog</a></li>
-            <li><a href="packages.html" class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Packages</a></li>
-            <li><a href="contact.html" class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Contact</a></li>
+            <li><a href="/"
+                    class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Home</a>
+            </li>
+            <li><a href="about"
+                    class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">About</a>
+            </li>
+            <li><a href="services"
+                    class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Services</a>
+            </li>
+            <li><a href="portfolio"
+                    class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Portfolio</a>
+            </li>
+            <li><a href="blog"
+                    class="text-xs uppercase tracking-widest font-semibold text-brand-orange transition-colors">Blog</a>
+            </li>
+            <li><a href="packages"
+                    class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Packages</a>
+            </li>
+            <li><a href="estimator"
+                    class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Estimator</a>
+            </li>
+            <li><a href="contact"
+                    class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Contact</a>
+            </li>
         </ul>
         <div class="hidden lg:flex items-center gap-6">
-            <a href="contact.html" class="flex items-center gap-2 border border-brand-orange text-brand-orange px-6 py-3 text-xs uppercase tracking-[0.15em] font-bold hover:bg-brand-orange hover:text-white transition-all duration-300">Get In Touch <svg class="w-3 h-3" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 3l4 4-4 4" /></svg></a>
+            <a href="contact"
+                class="flex items-center gap-2 border border-brand-orange text-brand-orange px-6 py-3 text-xs uppercase tracking-[0.15em] font-bold hover:bg-brand-orange hover:text-white transition-all duration-300">Get
+                In Touch <svg class="w-3 h-3" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M1 7h12M8 3l4 4-4 4" />
+                </svg></a>
         </div>
-        <button id="ham-btn" class="lg:hidden flex flex-col justify-center items-center w-8 h-8 z-50 group"><span class="w-6 h-[1.5px] bg-brand-dark block transition-all duration-300 group-[.active]:rotate-45 group-[.active]:translate-y-[6px]"></span><span class="w-6 h-[1.5px] bg-brand-dark block my-1.5 transition-all duration-300 group-[.active]:opacity-0"></span><span class="w-6 h-[1.5px] bg-brand-dark block transition-all duration-300 group-[.active]:-rotate-45 group-[.active]:-translate-y-[6px]"></span></button>
+        <button id="ham-btn" class="lg:hidden flex flex-col justify-center items-center w-8 h-8 z-50 group"><span
+                class="w-6 h-[1.5px] bg-brand-dark block transition-all duration-300 group-[.active]:rotate-45 group-[.active]:translate-y-[6px]"></span><span
+                class="w-6 h-[1.5px] bg-brand-dark block my-1.5 transition-all duration-300 group-[.active]:opacity-0"></span><span
+                class="w-6 h-[1.5px] bg-brand-dark block transition-all duration-300 group-[.active]:-rotate-45 group-[.active]:-translate-y-[6px]"></span></button>
     </nav>
-    <div id="mobile-drawer" class="fixed inset-0 bg-brand-cream z-40 flex flex-col justify-center items-center gap-8 opacity-0 pointer-events-none transition-opacity duration-300 [&.open]:opacity-100 [&.open]:pointer-events-auto">
-        <a href="index.html" class="font-serif text-3xl text-brand-dark">Home</a><a href="about.html" class="font-serif text-3xl text-brand-dark">About</a><a href="services.html" class="font-serif text-3xl text-brand-dark">Services</a><a href="portfolio.html" class="font-serif text-3xl text-brand-dark">Portfolio</a><a href="blog.html" class="font-serif text-3xl text-brand-orange">Blog</a><a href="packages.html" class="font-serif text-3xl text-brand-dark">Packages</a><a href="contact.html" class="font-serif text-3xl text-brand-dark">Contact</a>
+    <div id="mobile-drawer"
+        class="fixed inset-0 bg-brand-cream z-40 flex flex-col justify-center items-center gap-8 opacity-0 pointer-events-none transition-opacity duration-300 [&.open]:opacity-100 [&.open]:pointer-events-auto">
+        <a href="/" class="font-serif text-3xl text-brand-dark">Home</a><a href="about"
+            class="font-serif text-3xl text-brand-dark">About</a><a href="services"
+            class="font-serif text-3xl text-brand-dark">Services</a><a href="portfolio"
+            class="font-serif text-3xl text-brand-dark">Portfolio</a><a href="blog"
+            class="font-serif text-3xl text-brand-orange">Blog</a><a href="packages"
+            class="font-serif text-3xl text-brand-dark">Packages</a><a href="contact"
+            class="font-serif text-3xl text-brand-dark">Contact</a>
     </div>
 
-    <article class="max-w-7xl mx-auto px-6 md:px-12 pt-36 md:pt-40 pb-24 grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-16">
+    <article
+        class="max-w-7xl mx-auto px-6 md:px-12 pt-36 md:pt-40 pb-24 grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-16">
         <div>
             <header class="mb-12">
-                <a href="blog.html" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-brand-muted hover:text-brand-orange transition-colors mb-6"><svg class="w-3 h-3" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 7H1M6 3L2 7l4 4"/></svg>Back to Journal</a>
-                <span class="block text-xs uppercase tracking-widest text-brand-orange font-bold mb-4">Trends — March 10, 2026</span>
-                <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-brand-dark leading-[1.1] mb-6">The Evolution of Luxury: Sustainable Materials in Modern Homes</h1>
+                <a href="blog"
+                    class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-brand-muted hover:text-brand-orange transition-colors mb-6"><svg
+                        class="w-3 h-3" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M13 7H1M6 3L2 7l4 4" />
+                    </svg>Back to Journal</a>
+                <span class="block text-xs uppercase tracking-widest text-brand-orange font-bold mb-4">Trends — March
+                    10, 2026</span>
+                <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-brand-dark leading-[1.1] mb-6">The Evolution
+                    of Luxury: Sustainable Materials in Modern Homes</h1>
             </header>
-            <img src="assets/about_1.png" alt="Luxury Sustainable Interior" class="w-full h-64 md:h-[500px] object-cover mb-12">
+            <img src="assets/about_1.png" alt="Luxury Sustainable Interior"
+                class="w-full h-64 md:h-[500px] object-cover mb-12">
             <div class="prose max-w-none">
-                <p class="text-brand-muted leading-[1.8] text-base md:text-lg mb-6">Luxury is no longer just about the price tag or the rarity of a material; it's increasingly about the story, the origin, and the impact of the elements that make up a home. At Timberlane Interiors, we've seen a significant shift toward "conscious luxury"—where sustainability meets sophisticated aesthetics.</p>
+                <p class="text-brand-muted leading-[1.8] text-base md:text-lg mb-6">Luxury is no longer just about the
+                    price tag or the rarity of a material; it's increasingly about the story, the origin, and the impact
+                    of the elements that make up a home. At Timberlane Interiors, we've seen a significant shift toward
+                    "conscious luxury"—where sustainability meets sophisticated aesthetics.</p>
                 <h2 class="font-serif text-3xl text-brand-dark mt-14 mb-6">The Beauty of Reclaimed Marble</h2>
-                <p class="text-brand-muted leading-[1.8] text-base md:text-lg mb-6">Once considered waste, off-cuts from major quarries are being reimagined into stunning mosaics and sculptural furniture. These pieces carry the same timeless elegance of traditional marble but with a much lower environmental footprint.</p>
+                <p class="text-brand-muted leading-[1.8] text-base md:text-lg mb-6">Once considered waste, off-cuts from
+                    major quarries are being reimagined into stunning mosaics and sculptural furniture. These pieces
+                    carry the same timeless elegance of traditional marble but with a much lower environmental
+                    footprint.</p>
                 <h2 class="font-serif text-3xl text-brand-dark mt-14 mb-6">Organic Textiles & Quiet Luxury</h2>
-                <p class="text-brand-muted leading-[1.8] text-base md:text-lg mb-6">Quiet luxury isn't just a trend; it's a design philosophy. Using high-quality organic linens, peace silks, and responsibly sourced wool allows for a sensory experience that is both healthy and opulent. These materials breathe better, age gracefully, and offer a tactile depth that synthetic alternatives simply cannot match.</p>
-                <p class="text-brand-muted leading-[1.8] text-base md:text-lg mb-6">As we move further into 2026, the integration of nature into the home will only deepen. Designing for longevity is the ultimate sustainability.</p>
+                <p class="text-brand-muted leading-[1.8] text-base md:text-lg mb-6">Quiet luxury isn't just a trend;
+                    it's a design philosophy. Using high-quality organic linens, peace silks, and responsibly sourced
+                    wool allows for a sensory experience that is both healthy and opulent. These materials breathe
+                    better, age gracefully, and offer a tactile depth that synthetic alternatives simply cannot match.
+                </p>
+                <p class="text-brand-muted leading-[1.8] text-base md:text-lg mb-6">As we move further into 2026, the
+                    integration of nature into the home will only deepen. Designing for longevity is the ultimate
+                    sustainability.</p>
             </div>
         </div>
 
@@ -55,25 +140,49 @@
             <div class="bg-brand-warm p-8">
                 <h4 class="font-serif text-xl text-brand-dark mb-6">Recent Posts</h4>
                 <ul class="space-y-5">
-                    <li><a href="#" class="text-sm text-brand-dark hover:text-brand-orange transition-colors leading-relaxed block">Designing the Heart of the Home: Chef's Kitchens</a></li>
-                    <li><a href="#" class="text-sm text-brand-dark hover:text-brand-orange transition-colors leading-relaxed block">Master Suites: Creating a Sanctuary</a></li>
-                    <li><a href="#" class="text-sm text-brand-dark hover:text-brand-orange transition-colors leading-relaxed block">Invisible Tech in Luxury Design</a></li>
+                    <li><a href="#"
+                            class="text-sm text-brand-dark hover:text-brand-orange transition-colors leading-relaxed block">Designing
+                            the Heart of the Home: Chef's Kitchens</a></li>
+                    <li><a href="#"
+                            class="text-sm text-brand-dark hover:text-brand-orange transition-colors leading-relaxed block">Master
+                            Suites: Creating a Sanctuary</a></li>
+                    <li><a href="#"
+                            class="text-sm text-brand-dark hover:text-brand-orange transition-colors leading-relaxed block">Invisible
+                            Tech in Luxury Design</a></li>
                 </ul>
             </div>
             <div class="bg-brand-dark text-white p-8 text-center">
                 <h4 class="text-brand-orange font-serif text-xl mb-3">Transform Your Space</h4>
-                <p class="text-sm text-white/70 mb-6 leading-relaxed">Ready to bring sustainable luxury into your home? Let's discuss your vision.</p>
-                <a href="contact.html" class="block bg-brand-orange text-white text-xs tracking-widest uppercase py-3 font-bold hover:bg-white hover:text-brand-dark transition-colors">Book Consultation</a>
+                <p class="text-sm text-white/70 mb-6 leading-relaxed">Ready to bring sustainable luxury into your home?
+                    Let's discuss your vision.</p>
+                <a href="contact"
+                    class="block bg-brand-orange text-white text-xs tracking-widest uppercase py-3 font-bold hover:bg-white hover:text-brand-dark transition-colors">Book
+                    Consultation</a>
             </div>
         </aside>
     </article>
 
-    <footer class="bg-brand-dark text-white pt-20 pb-10 px-6 md:px-12 border-t-[8px] border-brand-orange"><div class="max-w-7xl mx-auto"><div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/30"><p>&copy; 2026 Timberlane Interiors. All rights reserved.</p><a href="privacy-policy.html" class="text-white/30 hover:text-brand-orange transition-colors">Privacy Policy</a><p class="tracking-widest uppercase">We Design The Feeling of You</p></div></div></footer>
+    <footer class="bg-brand-dark text-white pt-20 pb-10 px-6 md:px-12 border-t-[8px] border-brand-orange">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/30">
+                <p>&copy; 2026 Timberlane Interiors. All rights reserved.</p><a href="privacy-policy"
+                    class="text-white/30 hover:text-brand-orange transition-colors">Privacy Policy</a>
+                <p class="tracking-widest uppercase">We Design The Feeling of You</p>
+            </div>
+        </div>
+    </footer>
 
-    <a href="https://wa.me/918884651111" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" class="fixed bottom-6 right-6 z-40 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform duration-300"><svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+    <a href="https://wa.me/918884651111" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
+        class="fixed bottom-6 right-6 z-40 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform duration-300"><svg
+            class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg></a>
 
     <script>
-        document.addEventListener('DOMContentLoaded',()=>{window.addEventListener('scroll',()=>{const s=window.scrollY,h=document.documentElement.scrollHeight-window.innerHeight;if(h>0)document.getElementById('prog').style.width=((s/h)*100)+'%';const n=document.getElementById('nav');s>60?n.classList.add('solid'):n.classList.remove('solid')});window.dispatchEvent(new Event('scroll'));const h=document.getElementById('ham-btn'),d=document.getElementById('mobile-drawer');h.addEventListener('click',()=>{h.classList.toggle('active');d.classList.toggle('open');document.body.classList.toggle('overflow-hidden')});d.querySelectorAll('a').forEach(l=>{l.addEventListener('click',()=>{h.classList.remove('active');d.classList.remove('open');document.body.classList.remove('overflow-hidden')})})});
+        document.addEventListener('DOMContentLoaded', () => { window.addEventListener('scroll', () => { const s = window.scrollY, h = document.documentElement.scrollHeight - window.innerHeight; if (h > 0) document.getElementById('prog').style.width = ((s / h) * 100) + '%'; const n = document.getElementById('nav'); n.classList.add('solid') }); window.dispatchEvent(new Event('scroll')); const h = document.getElementById('ham-btn'), d = document.getElementById('mobile-drawer'); h.addEventListener('click', () => { h.classList.toggle('active'); d.classList.toggle('open'); document.body.classList.toggle('overflow-hidden') }); d.querySelectorAll('a').forEach(l => { l.addEventListener('click', () => { h.classList.remove('active'); d.classList.remove('open'); document.body.classList.remove('overflow-hidden') }) }) });
     </script>
+    <script src="main.js"></script>
 </body>
+
 </html>

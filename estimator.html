@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Interior Cost Estimator | Timberlane Interiors</title>
+    <meta name="description"
+        content="Get a precise interior design cost estimate for your home in minutes. Modern, elegant, and transparent pricing." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            orange: '#C85A17',
+                            dark: '#2A2C2E',
+                            cream: '#FDFBF7',
+                            warm: '#F4F0EA',
+                            muted: '#8A817C'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF7;
+            color: #2A2C2E;
+        }
+
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .step-container {
+            display: none;
+        }
+
+        .step-container.active {
+            display: block;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card-select {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+        }
+
+        .card-select.selected {
+            border-color: #C85A17;
+            background-color: #FFF;
+            box-shadow: 0 10px 25px -5px rgba(200, 90, 23, 0.1), 0 8px 10px -6px rgba(200, 90, 23, 0.1);
+        }
+
+        .btn-primary {
+            background-color: #2A2C2E;
+            color: #FFF;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #C85A17;
+            transform: translateY(-1px);
+        }
+
+        .btn-primary:disabled {
+            background-color: #CCC;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Custom Stepper */
+        .stepper-btn {
+            width: 32px;
+            height: 32px;
+            display: none; /* Hidden by default, shown for 4BHK+ */
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #C85A17;
+            /* Matching the pinkish-red in image */
+            color: white;
+            transition: all 0.2s;
+            font-size: 1.1rem;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(248, 113, 113, 0.2);
+        }
+
+        .stepper-btn:hover {
+            transform: scale(1.1);
+            background-color: #C85A17;
+        }
+
+        .stepper-btn:active {
+            transform: scale(0.95);
+        }
+
+
+
+        /* Glassmorphism for Result */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .otp-field:focus {
+            border-color: #C85A17;
+            box-shadow: 0 0 0 4px rgba(200, 90, 23, 0.1);
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-content {
+            background-color: #FDFBF7;
+            margin: 10% auto;
+            padding: 2rem;
+            border-radius: 2rem;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            animation: modalFadeIn 0.3s ease-out;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="py-6 px-4 md:px-8 bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-brand-warm">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="/" class="flex-shrink-0">
+                <img src="assets/logo.png" alt="Timberlane Interiors Logo"
+                    class="h-8 md:h-12 object-contain transition-all duration-300">
+            </a>
+            <div class="hidden md:flex gap-6 text-[0.7rem] uppercase tracking-widest font-semibold text-brand-muted">
+                <a href="index.html" class="hover:text-brand-orange transition-colors">Home</a>
+                <a href="about.html" class="hover:text-brand-orange transition-colors">About</a>
+                <a href="services.html" class="hover:text-brand-orange transition-colors">Services</a>
+                <a href="portfolio.html" class="hover:text-brand-orange transition-colors">Portfolio</a>
+                <a href="blog.html" class="hover:text-brand-orange transition-colors">Blog</a>
+                <a href="packages.html" class="hover:text-brand-orange transition-colors">Packages</a>
+                <a href="estimator.html" class="text-brand-orange">Estimator</a>
+                <a href="contact.html" class="hover:text-brand-orange transition-colors">Contact</a>
+            </div>
+            <button id="ham-btn" class="lg:hidden flex flex-col justify-center items-center w-8 h-8 z-50 group">
+                <span class="w-6 h-[1.5px] bg-brand-dark block transition-all duration-300 group-[.active]:rotate-45 group-[.active]:translate-y-[6px]"></span>
+                <span class="w-6 h-[1.5px] bg-brand-dark block my-1.5 transition-all duration-300 group-[.active]:opacity-0"></span>
+                <span class="w-6 h-[1.5px] bg-brand-dark block transition-all duration-300 group-[.active]:-rotate-45 group-[.active]:-translate-y-[6px]"></span>
+            </button>
+        </div>
+    </header>
+
+    <div id="mobile-drawer" class="fixed inset-0 bg-brand-cream z-40 flex flex-col justify-center items-center gap-8 opacity-0 pointer-events-none transition-opacity duration-300 [&.open]:opacity-100 [&.open]:pointer-events-auto">
+        <a href="index.html" class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Home</a>
+        <a href="about.html" class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">About</a>
+        <a href="services.html" class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Services</a>
+        <a href="portfolio.html" class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Portfolio</a>
+        <a href="blog.html" class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Blog</a>
+        <a href="packages.html" class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Packages</a>
+        <a href="estimator.html" class="font-serif text-3xl text-brand-orange">Estimator</a>
+        <a href="contact.html" class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Contact</a>
+    </div>
+
+    <!-- Info Modal -->
+    <div id="info-modal" class="modal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="font-serif text-2xl text-brand-dark">What's Included?</h3>
+                <button onclick="closeModal()" class="text-brand-muted hover:text-brand-dark">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-4 text-sm text-brand-muted leading-relaxed">
+                <p><strong class="text-brand-dark">Living room:</strong> TV unit, false ceiling, shoe rack sofa, coffee
+                    table, wallpapers, curtains and pooja unit.</p>
+                <p><strong class="text-brand-dark">Kitchen:</strong> Modular kitchen, loft, countertop, appliances,
+                    tiling and utility.</p>
+                <p><strong class="text-brand-dark">Bedroom:</strong> 2-door wardrobe, loft, false ceiling, tv unit,
+                    study unit, bed, side table, mattress and wooden flooring.</p>
+                <p><strong class="text-brand-dark">Other Bedroom:</strong> 2-door wardrobe and loft.</p>
+                <p><strong class="text-brand-dark">Bathroom:</strong> Vanity, tiling and shower cubicle</p>
+                <p><strong class="text-brand-dark">Dining:</strong> Crockery unit, dining table with chairs and false
+                    ceiling.</p>
+            </div>
+            <button onclick="closeModal()"
+                class="w-full mt-8 py-3 bg-brand-dark text-white rounded-xl text-xs font-bold uppercase tracking-widest hover:bg-brand-orange transition-colors">Close</button>
+        </div>
+    </div>
+
+    <main class="flex-grow py-12 px-4">
+        <div class="max-w-4xl mx-auto">
+
+            <!-- Progress Bar -->
+            <div class="mb-12">
+                <div class="flex justify-between mb-4">
+                    <span id="progress-text"
+                        class="text-[0.65rem] uppercase tracking-[0.2em] font-bold text-brand-orange">Step 1 of 6</span>
+                    <span id="step-title" class="text-sm font-semibold text-brand-dark">Property Type</span>
+                </div>
+                <div class="h-1 bg-brand-warm rounded-full overflow-hidden">
+                    <div id="progress-fill" class="h-full bg-brand-orange transition-all duration-500 ease-out"
+                        style="width: 16.6%"></div>
+                </div>
+            </div>
+
+            <!-- Steps -->
+            <div id="steps-wrapper">
+
+                <!-- Step 1: Property Type -->
+                <div id="step-1" class="step-container active">
+                    <h2 class="font-serif text-3xl md:text-4xl text-brand-dark mb-4">What type of property?</h2>
+                    <p class="text-brand-muted mb-10">Select your property type to get started.</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="card-select p-8 rounded-2xl bg-white border border-gray-100 flex flex-col items-center justify-center cursor-pointer hover:shadow-xl group"
+                            onclick="selectProperty('Apartment', this)">
+                            <svg class="w-10 h-10 text-brand-orange mb-4" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+                                <line x1="9" y1="22" x2="9" y2="22"></line>
+                                <line x1="15" y1="22" x2="15" y2="22"></line>
+                                <line x1="8" y1="6" x2="8" y2="6"></line>
+                                <line x1="16" y1="6" x2="16" y2="6"></line>
+                                <line x1="8" y1="10" x2="8" y2="10"></line>
+                                <line x1="16" y1="10" x2="16" y2="10"></line>
+                                <line x1="8" y1="14" x2="8" y2="14"></line>
+                                <line x1="16" y1="14" x2="16" y2="14"></line>
+                                <line x1="8" y1="18" x2="8" y2="18"></line>
+                                <line x1="16" y1="18" x2="16" y2="18"></line>
+                            </svg>
+                            <span class="font-bold text-lg">Apartment</span>
+                            <p class="text-[0.65rem] text-brand-muted uppercase tracking-wider mt-2">Flat or Gated
+                                Community</p>
+                        </div>
+                        <div class="card-select p-8 rounded-2xl bg-white border border-gray-100 flex flex-col items-center justify-center cursor-pointer hover:shadow-xl group"
+                            onclick="selectProperty('Villa', this)">
+                            <svg class="w-10 h-10 text-brand-orange mb-4" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                            <span class="font-bold text-lg">Villa</span>
+                            <p class="text-[0.65rem] text-brand-muted uppercase tracking-wider mt-2">Independent Luxury
+                                Villa</p>
+                        </div>
+                        <div class="card-select p-8 rounded-2xl bg-white border border-gray-100 flex flex-col items-center justify-center cursor-pointer hover:shadow-xl group"
+                            onclick="selectProperty('House', this)">
+                            <svg class="w-10 h-10 text-brand-orange mb-4" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                            <span class="font-bold text-lg">House</span>
+                            <p class="text-[0.65rem] text-brand-muted uppercase tracking-wider mt-2">Individual or Row
+                                House</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: BHK & Size -->
+                <div id="step-2" class="step-container">
+                    <h2 class="font-serif text-3xl md:text-4xl text-brand-dark mb-4">Home configuration</h2>
+                    <p class="text-brand-muted mb-8">Select your BHK type and enter the approx area.</p>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-10">
+                        <div class="card-select p-6 rounded-2xl bg-white border border-gray-100 flex flex-col items-center justify-center cursor-pointer hover:shadow-xl group"
+                            onclick="selectBHK('1 BHK', this)">
+                            <span class="font-bold text-lg">1 BHK</span>
+                        </div>
+                        <div class="card-select p-6 rounded-2xl bg-white border border-gray-100 flex flex-col items-center justify-center cursor-pointer hover:shadow-xl group"
+                            onclick="selectBHK('2 BHK', this)">
+                            <span class="font-bold text-lg">2 BHK</span>
+                        </div>
+                        <div class="card-select p-6 rounded-2xl bg-white border border-gray-100 flex flex-col items-center justify-center cursor-pointer hover:shadow-xl group"
+                            onclick="selectBHK('3 BHK', this)">
+                            <span class="font-bold text-lg">3 BHK</span>
+                        </div>
+                        <div class="card-select p-6 rounded-2xl bg-white border border-gray-100 flex flex-col items-center justify-center cursor-pointer hover:shadow-xl group"
+                            onclick="selectBHK('4 BHK+', this)">
+                            <span class="font-bold text-lg">4 BHK+</span>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!-- Step 3: Modules Selection -->
+                <div id="step-3" class="step-container text-center">
+                    <h2 class="font-serif text-3xl md:text-4xl text-brand-dark mb-4">Select the rooms you'd like us to
+                        design</h2>
+                    <p class="text-brand-muted mb-10">To know more about this, <a href="javascript:void(0)"
+                            onclick="openModal()" class="text-red-500 font-semibold hover:underline">click here</a></p>
+
+                    <div class="max-w-md mx-auto space-y-4">
+                        <!-- Living Room -->
+                        <div
+                            class="flex items-center justify-between px-8 py-5 rounded-2xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100/50">
+                            <h3 class="font-semibold text-brand-dark">Living Room</h3>
+                            <div class="flex items-center gap-5">
+                                <button class="stepper-btn" onclick="updateStepper('living', -1)">-</button>
+                                <span id="living-count" class="font-bold text-lg min-w-[20px] text-brand-dark">0</span>
+                                <button class="stepper-btn" onclick="updateStepper('living', 1)">+</button>
+                            </div>
+                        </div>
+
+                        <!-- Kitchen -->
+                        <div
+                            class="flex items-center justify-between px-8 py-5 rounded-2xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100/50">
+                            <h3 class="font-semibold text-brand-dark">Kitchen</h3>
+                            <div class="flex items-center gap-5">
+                                <button class="stepper-btn" onclick="updateStepper('kitchen', -1)">-</button>
+                                <span id="kitchen-count" class="font-bold text-lg min-w-[20px] text-brand-dark">0</span>
+                                <button class="stepper-btn" onclick="updateStepper('kitchen', 1)">+</button>
+                            </div>
+                        </div>
+
+                        <!-- Bedroom -->
+                        <div
+                            class="flex items-center justify-between px-8 py-5 rounded-2xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100/50">
+                            <h3 class="font-semibold text-brand-dark">Bedroom</h3>
+                            <div class="flex items-center gap-5">
+                                <button class="stepper-btn" onclick="updateStepper('bedroom', -1)">-</button>
+                                <span id="bedroom-count" class="font-bold text-lg min-w-[20px] text-brand-dark">0</span>
+                                <button class="stepper-btn" onclick="updateStepper('bedroom', 1)">+</button>
+                            </div>
+                        </div>
+
+                        <!-- Bathroom -->
+                        <div
+                            class="flex items-center justify-between px-8 py-5 rounded-2xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100/50">
+                            <h3 class="font-semibold text-brand-dark">Bathroom</h3>
+                            <div class="flex items-center gap-5">
+                                <button class="stepper-btn" onclick="updateStepper('bathroom', -1)">-</button>
+                                <span id="bathroom-count"
+                                    class="font-bold text-lg min-w-[20px] text-brand-dark">0</span>
+                                <button class="stepper-btn" onclick="updateStepper('bathroom', 1)">+</button>
+                            </div>
+                        </div>
+
+                        <!-- Dining -->
+                        <div
+                            class="flex items-center justify-between px-8 py-5 rounded-2xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100/50">
+                            <h3 class="font-semibold text-brand-dark">Dining</h3>
+                            <div class="flex items-center gap-5">
+                                <button class="stepper-btn" onclick="updateStepper('dining', -1)">-</button>
+                                <span id="dining-count" class="font-bold text-lg min-w-[20px] text-brand-dark">0</span>
+                                <button class="stepper-btn" onclick="updateStepper('dining', 1)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: Package Selection -->
+                <div id="step-4" class="step-container text-center">
+                    <h2 class="font-serif text-3xl md:text-4xl text-brand-dark mb-4">Choose your finish quality</h2>
+                    <p class="text-brand-muted mb-10">Select a package that fits your lifestyle and budget.</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Essential -->
+                        <div class="card-select p-8 rounded-3xl bg-white border border-gray-100 flex flex-col cursor-pointer group hover:shadow-2xl h-full"
+                            onclick="selectPackage('Essential', this)">
+                            <div class="mb-6">
+                                <span
+                                    class="inline-block px-3 py-1 rounded-full bg-brand-warm text-brand-muted text-[0.6rem] font-bold uppercase tracking-widest mb-4 group-hover:bg-brand-orange group-hover:text-white transition-colors">Starter</span>
+                                <h3 class="text-2xl font-bold text-brand-dark mb-2">Essential</h3>
+                                <p class="text-xs text-brand-muted leading-relaxed">Fundamental designs with
+                                    high-quality laminate finishes and sturdy materials.</p>
+                            </div>
+                            <ul class="text-left space-y-3 mb-8 flex-grow">
+                                <li class="text-xs flex items-center gap-2"><svg class="w-4 h-4 text-green-500"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg> Matte Laminate Finish</li>
+                                <li class="text-xs flex items-center gap-2"><svg class="w-4 h-4 text-green-500"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg> Basic Hardware</li>
+                                <li class="text-xs flex items-center gap-2"><svg class="w-4 h-4 text-green-500"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg> Commercial Plywood</li>
+                            </ul>
+                            <div class="pt-6 border-t border-gray-100 mt-auto">
+                                <span class="text-brand-orange font-bold text-xs uppercase tracking-widest">Base Rate
+                                    Range</span>
+                            </div>
+                        </div>
+
+                        <!-- Premium -->
+                        <div id="default-package"
+                            class="card-select p-8 rounded-3xl bg-white border border-gray-200 flex flex-col cursor-pointer group hover:shadow-2xl relative h-full"
+                            onclick="selectPackage('Premium', this)">
+                            <div
+                                class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-dark text-white text-[0.6rem] px-4 py-1 rounded-full font-bold uppercase tracking-[0.2em] shadow-lg">
+                                Most Popular</div>
+                            <div class="mb-6">
+                                <span
+                                    class="inline-block px-3 py-1 rounded-full bg-brand-warm text-brand-muted text-[0.6rem] font-bold uppercase tracking-widest mb-4 group-hover:bg-brand-orange group-hover:text-white transition-colors">Professional</span>
+                                <h3 class="text-2xl font-bold text-brand-dark mb-2">Premium</h3>
+                                <p class="text-xs text-brand-muted leading-relaxed">Sleek acrylic/PU finishes, branded
+                                    hardware components, and superior lighting.</p>
+                            </div>
+                            <ul class="text-left space-y-3 mb-8 flex-grow">
+                                <li class="text-xs flex items-center gap-2"><svg class="w-4 h-4 text-green-500"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg> High Gloss Acrylic/PU</li>
+                                <li class="text-xs flex items-center gap-2"><svg class="w-4 h-4 text-green-500"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg> Soft-Close Branded Hardware</li>
+                                <li class="text-xs flex items-center gap-2"><svg class="w-4 h-4 text-green-500"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg> BWP Waterproof Plywood</li>
+                            </ul>
+                            <div class="pt-6 border-t border-gray-100 mt-auto">
+                                <span class="text-brand-orange font-bold text-xs uppercase tracking-widest">Mid Rate
+                                    Range</span>
+                            </div>
+                        </div>
+
+                        <!-- Luxury -->
+                        <div class="card-select p-8 rounded-3xl bg-white border border-gray-100 flex flex-col cursor-pointer group hover:shadow-2xl h-full"
+                            onclick="selectPackage('Luxury', this)">
+                            <div class="mb-6">
+                                <span
+                                    class="inline-block px-3 py-1 rounded-full bg-brand-warm text-brand-muted text-[0.6rem] font-bold uppercase tracking-widest mb-4 group-hover:bg-brand-orange group-hover:text-white transition-colors">Exquisite</span>
+                                <h3 class="text-2xl font-bold text-brand-dark mb-2">Luxury</h3>
+                                <p class="text-xs text-brand-muted leading-relaxed">Bespoke luxury materials like
+                                    veneer, stone finishes, and fully automated hardware.</p>
+                            </div>
+                            <ul class="text-left space-y-3 mb-8 flex-grow">
+                                <li class="text-xs flex items-center gap-2"><svg class="w-4 h-4 text-green-500"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg> Natural Veneer/Stone Finish</li>
+                                <li class="text-xs flex items-center gap-2"><svg class="w-4 h-4 text-green-500"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg> Premium International Brands</li>
+                                <li class="text-xs flex items-center gap-2"><svg class="w-4 h-4 text-green-500"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg> Full Automation Options</li>
+                            </ul>
+                            <div class="pt-6 border-t border-gray-100 mt-auto">
+                                <span class="text-brand-orange font-bold text-xs uppercase tracking-widest">High Rate
+                                    Range</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5: Lead Capture -->
+                <div id="step-5" class="step-container text-center">
+                    <h2 class="font-serif text-3xl md:text-4xl text-brand-dark mb-4">Almost there!</h2>
+                    <p class="text-brand-muted mb-10">Enter your details to generate your personalized estimate.</p>
+
+                    <div class="max-w-md mx-auto space-y-6">
+                        <div class="text-left">
+                            <label
+                                class="block text-[0.65rem] tracking-[0.2em] font-bold text-brand-muted uppercase mb-2">FullName</label>
+                            <input type="text" id="lead-name" placeholder="Harshitha"
+                                class="w-full px-6 py-4 rounded-2xl bg-white border border-gray-100 focus:border-brand-orange focus:outline-none placeholder-gray-300 font-medium"
+                                oninput="updateNavState()">
+                        </div>
+                        <div class="text-left">
+                            <label
+                                class="block text-[0.65rem] tracking-[0.2em] font-bold text-brand-muted uppercase mb-2">Phone
+                                Number</label>
+                            <input type="tel" id="lead-phone" placeholder="+91 8884651111"
+                                class="w-full px-6 py-4 rounded-2xl bg-white border border-gray-100 focus:border-brand-orange focus:outline-none placeholder-gray-300 font-medium"
+                                oninput="updateNavState()">
+                        </div>
+
+                        <div class="text-left">
+                            <label
+                                class="block text-[0.65rem] tracking-[0.2em] font-bold text-brand-muted uppercase mb-2">Email
+                                Address (Optional)</label>
+                            <input type="email" id="lead-email" placeholder="you@example.com"
+                                class="w-full px-6 py-4 rounded-2xl bg-white border border-gray-100 focus:border-brand-orange focus:outline-none placeholder-gray-300 font-medium">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 6: Results -->
+                <div id="step-6" class="step-container text-center">
+                    <div class="glass-card rounded-[3rem] p-8 md:p-12 mb-12 shadow-2xl relative overflow-hidden">
+                        <div
+                            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-warm via-brand-orange to-brand-warm">
+                        </div>
+                        <div
+                            class="w-16 h-16 bg-green-50 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <p class="text-sm uppercase tracking-[0.3em] font-bold text-brand-muted mb-2">Estimated Budget
+                            Range</p>
+                        <h2 id="final-range" class="text-4xl md:text-6xl font-bold text-brand-dark mb-4">₹4.5L - ₹5.5L
+                        </h2>
+                        <div
+                            class="inline-flex items-center px-4 py-1.5 rounded-full bg-brand-warm/50 text-[0.65rem] font-bold uppercase tracking-widest text-brand-muted mb-8">
+                            <span class="w-2 h-2 rounded-full bg-green-500 mr-2"></span> Prices are GST Inclusive
+                        </div>
+
+                        <div
+                            class="p-6 bg-brand-warm/30 rounded-2xl max-w-lg mx-auto text-sm text-brand-muted leading-relaxed mb-4">
+                            This estimate is based on the selected modules and package. Actual costs may vary depending
+                            on site measurements and specific design customizations.
+                        </div>
+
+                        <a href="javascript:void(0)" onclick="toggleDetailedSummary()"
+                            class="text-xs font-bold text-brand-orange uppercase tracking-widest hover:underline">View
+                            Detailed Summary</a>
+
+                        <div id="detailed-summary"
+                            class="hidden mt-8 pt-8 border-t border-brand-warm text-left space-y-4">
+                            <div id="breakdown-list" class="space-y-3">
+                                <!-- Populated dynamically -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row gap-4 items-center justify-center">
+                        <a href="/contact"
+                            class="px-10 py-5 bg-brand-dark text-white rounded-2xl font-bold uppercase tracking-widest text-xs hover:bg-brand-orange transition-all shadow-xl hover:shadow-brand-orange/20 w-full md:w-auto">Book
+                            Free Consultation</a>
+                        <button onclick="restartEstimator()"
+                            class="px-10 py-5 border-2 border-brand-warm text-brand-dark rounded-2xl font-bold uppercase tracking-widest text-xs hover:border-brand-dark transition-all w-full md:w-auto">Modify
+                            Selections</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div id="navigation-footer" class="mt-12 flex justify-between items-center">
+                <button id="prev-btn" onclick="prevStep()"
+                    class="text-xs font-bold uppercase tracking-widest text-brand-muted hover:text-brand-dark transition-colors invisible">Back</button>
+                <button id="next-btn" onclick="nextStep()"
+                    class="btn-primary py-4 px-12 rounded-xl text-xs font-bold uppercase tracking-widest shadow-xl disabled:opacity-50">Next
+                    Step</button>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="py-12 px-4 border-t border-brand-warm bg-white mt-auto">
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="text-[0.65rem] uppercase tracking-[0.2em] text-brand-muted mb-2">&copy; 2026 Timberlane Interiors
+            </p>
+            <p class="text-xs text-brand-muted italic">Crafting bespoke spaces with passion since 2018.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Pricing Data (Detailed per module & finish)
+
+
+        const pricingData = {
+            living: { Essential: 70000, Premium: 125000, Luxury: 220000, label: 'Living Room' },
+            kitchen: { Essential: 135000, Premium: 220000, Luxury: 400000, label: 'Modular Kitchen' },
+            bedroom: { Essential: 100000, Premium: 160000, Luxury: 270000, label: 'Bedroom' },
+            bathroom: { Essential: 35000, Premium: 60000, Luxury: 100000, label: 'Bathroom' },
+            dining: { Essential: 45000, Premium: 80000, Luxury: 140000, label: 'Dining Area' }
+        };
+
+        // State Management
+        let state = {
+            step: 1,
+            totalSteps: 6,
+            property: null,
+            bhk: null,
+            area: 1200, // Default
+            modules: {
+                living: 0,
+                kitchen: 0,
+                bedroom: 0,
+                bathroom: 0,
+                dining: 0
+            },
+            package: 'Premium'
+        };
+
+        const stepTitles = {
+            1: "Select Property Type",
+            2: "Home Configuration",
+            3: "Choose Modules",
+            4: "Select Finish Quality",
+            5: "Verify Details",
+            6: "Estimated Estimate"
+        };
+
+        // Selection Handlers
+        function selectProperty(val, el) {
+            state.property = val;
+            document.querySelectorAll('#step-1 .card-select').forEach(card => card.classList.remove('selected'));
+            el.classList.add('selected');
+            updateNavState();
+            setTimeout(() => nextStep(), 400); // Auto-advance for better UX
+        }
+
+        function selectBHK(val, el) {
+            state.bhk = val;
+            document.querySelectorAll('#step-2 .card-select').forEach(card => card.classList.remove('selected'));
+            el.classList.add('selected');
+
+            // Set default room counts based on BHK
+            const count = parseInt(val) || 4; // 4 for '4 BHK+'
+            state.modules.living = 1;
+            state.modules.kitchen = 1;
+            state.modules.bedroom = count;
+            state.modules.bathroom = count;
+            state.modules.dining = 1;
+
+            // Update UI counts
+            Object.keys(state.modules).forEach(id => {
+                const countEl = document.getElementById(`${id}-count`);
+                if (countEl) countEl.textContent = state.modules[id];
+            });
+
+            // Toggle stepper buttons visibility based on BHK
+            const stepperBtns = document.querySelectorAll('.stepper-btn');
+            if (val === '4 BHK+') {
+                stepperBtns.forEach(btn => btn.style.display = 'flex');
+            } else {
+                stepperBtns.forEach(btn => btn.style.display = 'none');
+            }
+
+            updateNavState();
+            setTimeout(() => nextStep(), 400); // Auto-advance for better UX
+        }
+
+        function updateArea(val) {
+            state.area = parseInt(val) || 0;
+            updateNavState();
+        }
+
+        function updateStepper(id, delta) {
+            if (state.bhk !== '4 BHK+') return; // Only allow editing for 4 BHK+
+            state.modules[id] = Math.max(0, state.modules[id] + delta);
+            document.getElementById(`${id}-count`).textContent = state.modules[id];
+            updateNavState();
+        }
+
+        function selectPackage(val, el) {
+            state.package = val;
+            document.querySelectorAll('#step-4 .card-select').forEach(card => card.classList.remove('selected'));
+            el.classList.add('selected');
+            updateNavState();
+            setTimeout(() => nextStep(), 400); // Auto-advance
+        }
+
+        // Navigation Logic
+        function updateNavState() {
+            const nextBtn = document.getElementById('next-btn');
+            const prevBtn = document.getElementById('prev-btn');
+
+            // Back button visibility
+            if (state.step > 1 && state.step < 6) prevBtn.classList.remove('invisible');
+            else prevBtn.classList.add('invisible');
+
+            // Next button logic
+            let canProceed = false;
+            if (state.step === 1) canProceed = !!state.property;
+            else if (state.step === 2) canProceed = !!state.bhk;
+            else if (state.step === 3) {
+                const totalModules = Object.values(state.modules).reduce((a, b) => a + b, 0);
+                canProceed = totalModules > 0;
+            }
+            else if (state.step === 4) canProceed = !!state.package;
+            else if (state.step === 5) {
+                const name = document.getElementById('lead-name').value;
+                const phone = document.getElementById('lead-phone').value;
+                canProceed = name.length >= 3 && phone.length >= 10;
+            }
+
+            nextBtn.disabled = !canProceed;
+
+            // Auto-advance steps can hide the next button
+            if (state.step === 1 || state.step === 2 || state.step === 4) nextBtn.classList.add('hidden');
+            else nextBtn.classList.remove('hidden');
+
+            // Final step hides footer nav
+            if (state.step === 6) document.getElementById('navigation-footer').classList.add('hidden');
+            else document.getElementById('navigation-footer').classList.remove('hidden');
+        }
+
+        function nextStep() {
+            if (state.step === 5) {
+                calculateResult();
+            }
+            if (state.step < state.totalSteps) {
+                state.step++;
+                renderStep();
+            }
+        }
+
+        function prevStep() {
+            if (state.step > 1) {
+                state.step--;
+                renderStep();
+            }
+        }
+
+        function renderStep() {
+            // Update UI
+            document.querySelectorAll('.step-container').forEach(s => s.classList.remove('active'));
+            document.getElementById(`step-${state.step}`).classList.add('active');
+
+            // Progress Bar
+            const progress = (state.step / state.totalSteps) * 100;
+            document.getElementById('progress-fill').style.width = `${progress}%`;
+            document.getElementById('progress-text').textContent = `Step ${state.step} of 6`;
+            document.getElementById('step-title').textContent = stepTitles[state.step];
+
+            if (state.step === 6) calculateResult();
+
+            updateNavState();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+
+
+
+        function calculateResult() {
+            let total = 0;
+            const items = [];
+            const pkg = state.package;
+
+            // Multipliers
+            const bhkMap = { '1 BHK': 0.85, '2 BHK': 1.0, '3 BHK': 1.15, '4 BHK+': 1.35 };
+            const bhkMultiplier = bhkMap[state.bhk] || 1.0;
+
+            const propMultiplier = (state.property === 'Villa' || state.property === 'House') ? 1.1 : 1.0;
+
+            // Living Room
+            if (state.modules.living > 0) {
+                let cost = pricingData.living[pkg] * state.modules.living * bhkMultiplier * propMultiplier;
+                total += cost;
+                items.push({ label: `${state.modules.living} x Living Room`, cost });
+            }
+
+            // Kitchen
+            if (state.modules.kitchen > 0) {
+                let cost = pricingData.kitchen[pkg] * state.modules.kitchen * bhkMultiplier * propMultiplier;
+                total += cost;
+                items.push({ label: `${state.modules.kitchen} x Modular Kitchen`, cost });
+            }
+
+            // Bedroom
+            if (state.modules.bedroom > 0) {
+                let cost = pricingData.bedroom[pkg] * state.modules.bedroom * bhkMultiplier;
+                total += cost;
+                items.push({ label: `${state.modules.bedroom} x Bedroom`, cost });
+            }
+
+            // Bathroom
+            if (state.modules.bathroom > 0) {
+                let cost = pricingData.bathroom[pkg] * state.modules.bathroom;
+                total += cost;
+                items.push({ label: `${state.modules.bathroom} x Bathroom`, cost });
+            }
+
+            // Dining
+            if (state.modules.dining > 0) {
+                let cost = pricingData.dining[pkg] * state.modules.dining;
+                total += cost;
+                items.push({ label: `${state.modules.dining} x Dining Area`, cost });
+            }
+
+            // Wider range calculation (-15% to +25%) to provide more flexibility
+            const low = Math.round((total * 0.85) / 5000) * 5000;
+            const high = Math.round((total * 1.25) / 5000) * 5000;
+
+            document.getElementById('final-range').textContent = `₹${formatLakhs(low)} - ₹${formatLakhs(high)}`;
+
+            // Breakdown
+            const list = document.getElementById('breakdown-list');
+            list.innerHTML = items.length > 0 ? '' : '<p class="text-xs text-brand-muted italic">No items selected.</p>';
+
+            items.forEach(item => {
+                const div = document.createElement('div');
+                div.className = "flex justify-between items-center pb-2 border-b border-brand-warm";
+                div.innerHTML = `
+                    <span class="text-xs font-semibold text-brand-dark">${item.label}</span>
+                    <span class="text-xs text-brand-muted">₹${formatCurrency(item.cost)}</span>
+                `;
+                list.appendChild(div);
+            });
+
+            if (items.length > 0) {
+                const footer = document.createElement('div');
+                footer.className = "flex justify-between items-center pt-2";
+                footer.innerHTML = `
+                    <span class="text-[0.65rem] font-bold uppercase tracking-widest text-brand-orange">Calculated Total</span>
+                    <span class="text-sm font-bold text-brand-dark">₹${formatCurrency(Math.round(total))}</span>
+                `;
+                list.appendChild(footer);
+            }
+
+            submitLead();
+        }
+
+        const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbzh7gWJD_dC7aqlBDPKAjWvQxCYX0MZRHWe_oOvw6ie0l6aUk7Ligu4sjRKTHM8PtUR/exec';
+
+        function submitLead() {
+            const payload = {
+                name: document.getElementById('lead-name').value,
+                phone: document.getElementById('lead-phone').value,
+                email: document.getElementById('lead-email').value,
+                service: 'Estimator Lead',
+                message: `Estimate: ${state.property}, ${state.bhk}, Pkg: ${state.package}, Modules: ${JSON.stringify(state.modules)}`,
+                source: 'Estimator'
+            };
+
+            fetch(GOOGLE_SHEET_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                body: JSON.stringify(payload)
+            });
+        }
+
+        function formatLakhs(num) {
+            if (num === 0) return "0";
+            if (num >= 100000) {
+                return (num / 100000).toFixed(2) + "L";
+            }
+            return num.toLocaleString('en-IN');
+        }
+
+        function formatCurrency(num) {
+            return Math.round(num).toLocaleString('en-IN');
+        }
+
+        function toggleDetailedSummary() {
+            document.getElementById('detailed-summary').classList.toggle('hidden');
+        }
+
+        function restartEstimator() {
+            state.step = 1;
+            renderStep();
+        }
+
+        function openModal() {
+            document.getElementById('info-modal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('info-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function (event) {
+            const modal = document.getElementById('info-modal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const defaultCard = document.getElementById('default-package');
+            selectPackage('Premium', defaultCard);
+
+            // Mobile Menu Logic
+            const hamBtn = document.getElementById('ham-btn');
+            const drawer = document.getElementById('mobile-drawer');
+            if (hamBtn && drawer) {
+                hamBtn.addEventListener('click', () => {
+                    hamBtn.classList.toggle('active');
+                    drawer.classList.toggle('open');
+                    document.body.classList.toggle('overflow-hidden');
+                });
+                drawer.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        hamBtn.classList.remove('active');
+                        drawer.classList.remove('open');
+                        document.body.classList.remove('overflow-hidden');
+                    });
+                });
+            }
+        });
+    </script>
+    <script src="main.js"></script>
+    <a href="https://wa.me/918884651111" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
+        class="fixed bottom-6 right-6 z-40 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform duration-300">
+        <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+    </a>
+</body>
+
+</html>

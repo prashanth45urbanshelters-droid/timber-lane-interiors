@@ -1,68 +1,155 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>Privacy Policy — Timberlane Interiors</title>
-    <meta name="description" content="Read the Privacy Policy of Timberlane Interiors — how we collect, use, and protect your personal information." />
+    <meta name="description"
+        content="Read the Privacy Policy of Timberlane Interiors — how we collect, use, and protect your personal information." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
+        rel="stylesheet" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = { theme: { extend: { colors: { brand: { orange: '#C85A17', dark: '#2A2C2E', cream: '#FDFBF7', warm: '#F4F0EA', muted: '#8A817C' } }, fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] } } } }
     </script>
     <style>
-        body { background-color: #FDFBF7; color: #2A2C2E; }
-        #prog { position: fixed; top: 0; left: 0; height: 3px; z-index: 1000; background: #C85A17; width: 0; transition: width 0.1s ease-out; }
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
-        .reveal.in { opacity: 1; transform: translateY(0); }
-        .delay-100 { transition-delay: 100ms; } .delay-200 { transition-delay: 200ms; } .delay-300 { transition-delay: 300ms; }
-        #nav { transition: all 0.4s ease; }
-        #nav.solid { background: rgba(253, 251, 247, 0.95); backdrop-filter: blur(10px); box-shadow: 0 4px 30px rgba(0,0,0,0.03); padding-top: 0.75rem; padding-bottom: 0.75rem; }
+        body {
+            background-color: #FDFBF7;
+            color: #2A2C2E;
+        }
+
+        #prog {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            z-index: 1000;
+            background: #C85A17;
+            width: 0;
+            transition: width 0.1s ease-out;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-100 {
+            transition-delay: 100ms;
+        }
+
+        .delay-200 {
+            transition-delay: 200ms;
+        }
+
+        .delay-300 {
+            transition-delay: 300ms;
+        }
+
+        #nav {
+            background: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+        }
     </style>
 </head>
+
 <body class="overflow-x-hidden font-sans antialiased selection:bg-brand-orange selection:text-white">
     <div id="prog"></div>
 
-    <nav id="nav" class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 md:px-12 py-3 bg-transparent">
-        <a href="index.html" class="flex-shrink-0 relative z-50"><img src="assets/logo.png" alt="Timberlane Interiors Logo" class="h-8 md:h-14 object-contain transition-all duration-300"></a>
-        <ul class="hidden lg:flex items-center gap-8 xl:gap-12">
-            <li><a href="index.html" class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Home</a></li>
-            <li><a href="about.html" class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">About</a></li>
-            <li><a href="services.html" class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Services</a></li>
-            <li><a href="portfolio.html" class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Portfolio</a></li>
-            <li><a href="blog.html" class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Blog</a></li>
-            <li><a href="packages.html" class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Packages</a></li>
-            <li><a href="contact.html" class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Contact</a></li>
+    <nav id="nav"
+        class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 md:px-12 py-2">
+        <a href="/" class="flex-shrink-0 relative z-50"><img src="assets/logo.png" alt="Timberlane Interiors Logo"
+                class="h-8 md:h-14 object-contain transition-all duration-300"></a>
+        <ul class="hidden lg:flex items-center gap-6 xl:gap-8">
+            <li><a href="/"
+                    class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Home</a>
+            </li>
+            <li><a href="about"
+                    class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">About</a>
+            </li>
+            <li><a href="services"
+                    class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Services</a>
+            </li>
+            <li><a href="portfolio"
+                    class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Portfolio</a>
+            </li>
+            <li><a href="blog"
+                    class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Blog</a>
+            </li>
+            <li><a href="packages"
+                    class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Packages</a>
+            </li>
+            <li><a href="estimator"
+                    class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Estimator</a>
+            </li>
+            <li><a href="contact"
+                    class="text-xs uppercase tracking-widest font-semibold text-brand-dark/70 hover:text-brand-orange transition-colors">Contact</a>
+            </li>
         </ul>
         <div class="hidden lg:flex items-center gap-6">
-            <a href="tel:+918884651111" class="flex items-center gap-2 text-sm font-semibold hover:text-brand-orange transition-colors"><svg class="w-4 h-4 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>+91 8884651111</a>
-            <a href="contact.html" class="flex items-center gap-2 border border-brand-orange text-brand-orange px-6 py-3 text-xs uppercase tracking-[0.15em] font-bold hover:bg-brand-orange hover:text-white transition-all duration-300">Get Your Design <svg class="w-3 h-3" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 3l4 4-4 4" /></svg></a>
+            <a href="tel:+918884651111"
+                class="flex items-center gap-2 text-sm font-semibold hover:text-brand-orange transition-colors"><svg
+                    class="w-4 h-4 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                    </path>
+                </svg>+91 8884651111</a>
+            <a href="contact"
+                class="flex items-center gap-2 border border-brand-orange text-brand-orange px-6 py-3 text-xs uppercase tracking-[0.15em] font-bold hover:bg-brand-orange hover:text-white transition-all duration-300">Get
+                Your Design <svg class="w-3 h-3" viewBox="0 0 14 14" fill="none" stroke="currentColor"
+                    stroke-width="1.5">
+                    <path d="M1 7h12M8 3l4 4-4 4" />
+                </svg></a>
         </div>
         <button id="ham-btn" class="lg:hidden flex flex-col justify-center items-center w-8 h-8 z-50 group">
-            <span class="w-6 h-[1.5px] bg-brand-dark block transition-all duration-300 group-[.active]:rotate-45 group-[.active]:translate-y-[6px]"></span>
-            <span class="w-6 h-[1.5px] bg-brand-dark block my-1.5 transition-all duration-300 group-[.active]:opacity-0"></span>
-            <span class="w-6 h-[1.5px] bg-brand-dark block transition-all duration-300 group-[.active]:-rotate-45 group-[.active]:-translate-y-[6px]"></span>
+            <span
+                class="w-6 h-[1.5px] bg-brand-dark block transition-all duration-300 group-[.active]:rotate-45 group-[.active]:translate-y-[6px]"></span>
+            <span
+                class="w-6 h-[1.5px] bg-brand-dark block my-1.5 transition-all duration-300 group-[.active]:opacity-0"></span>
+            <span
+                class="w-6 h-[1.5px] bg-brand-dark block transition-all duration-300 group-[.active]:-rotate-45 group-[.active]:-translate-y-[6px]"></span>
         </button>
     </nav>
-    <div id="mobile-drawer" class="fixed inset-0 bg-brand-cream z-40 flex flex-col justify-center items-center gap-8 opacity-0 pointer-events-none transition-opacity duration-300 [&.open]:opacity-100 [&.open]:pointer-events-auto">
-        <a href="index.html" class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Home</a>
-        <a href="about.html" class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">About</a>
-        <a href="services.html" class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Services</a>
-        <a href="portfolio.html" class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Portfolio</a>
-        <a href="blog.html" class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Blog</a>
-        <a href="packages.html" class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Packages</a>
-        
-        <a href="contact.html" class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Contact</a>
+    <div id="mobile-drawer"
+        class="fixed inset-0 bg-brand-cream z-40 flex flex-col justify-center items-center gap-8 opacity-0 pointer-events-none transition-opacity duration-300 [&.open]:opacity-100 [&.open]:pointer-events-auto">
+        <a href="/" class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Home</a>
+        <a href="about" class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">About</a>
+        <a href="services"
+            class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Services</a>
+        <a href="portfolio"
+            class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Portfolio</a>
+        <a href="blog" class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Blog</a>
+        <a href="packages"
+            class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Packages</a>
+        <a href="estimator"
+            class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Estimator</a>
+        <a href="contact"
+            class="font-serif text-3xl text-brand-dark hover:text-brand-orange transition-colors">Contact</a>
     </div>
 
     <!-- PAGE HERO -->
     <header class="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-brand-warm">
         <div class="max-w-7xl mx-auto px-6 md:px-12">
-            <p class="text-[0.65rem] tracking-[0.35em] uppercase text-brand-orange mb-4 reveal">Legal</p>
-            <h1 class="font-serif text-5xl md:text-7xl text-brand-dark reveal delay-100">Privacy <em class="text-brand-orange">Policy</em></h1>
-            <p class="text-brand-muted text-sm mt-6 reveal delay-200">Last updated: March 24, 2026</p>
+            <p class="text-[0.65rem] tracking-[0.35em] uppercase text-brand-orange mb-4">Legal</p>
+            <h1 class="font-serif text-5xl md:text-7xl text-brand-dark">Privacy <em
+                    class="text-brand-orange">Policy</em></h1>
+            <p class="text-brand-muted text-sm mt-6">Last updated: March 24, 2026</p>
         </div>
     </header>
 
@@ -73,10 +160,14 @@
             <!-- Introduction -->
             <div class="mb-16 reveal">
                 <p class="text-brand-muted leading-relaxed text-sm md:text-base mb-6">
-                    At Timberlane Interiors ("we," "our," or "us"), we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy describes how we collect, use, disclose, and safeguard your information when you visit our website or engage our interior design services.
+                    At Timberlane Interiors ("we," "our," or "us"), we are committed to protecting your privacy and
+                    ensuring the security of your personal information. This Privacy Policy describes how we collect,
+                    use, disclose, and safeguard your information when you visit our website or engage our interior
+                    design services.
                 </p>
                 <p class="text-brand-muted leading-relaxed text-sm md:text-base">
-                    By using our website or engaging our services, you agree to the collection and use of information in accordance with this policy. If you do not agree with the terms, please do not access the website.
+                    By using our website or engaging our services, you agree to the collection and use of information in
+                    accordance with this policy. If you do not agree with the terms, please do not access the website.
                 </p>
             </div>
 
@@ -89,36 +180,66 @@
                     <h2 class="font-serif text-2xl md:text-3xl text-brand-dark">Information We Collect</h2>
                 </div>
                 <div class="pl-14">
-                    <h3 class="font-semibold text-brand-dark text-sm uppercase tracking-wider mb-3">Personal Information</h3>
+                    <h3 class="font-semibold text-brand-dark text-sm uppercase tracking-wider mb-3">Personal Information
+                    </h3>
                     <p class="text-brand-muted leading-relaxed text-sm md:text-base mb-4">
-                        When you fill out our contact form, request a consultation, or engage our services, we may collect:
+                        When you fill out our contact form, request a consultation, or engage our services, we may
+                        collect:
                     </p>
                     <ul class="space-y-3 text-sm text-brand-muted mb-6">
-                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline></svg>Full name and contact details (phone number, email address)</li>
-                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline></svg>Residential or project address</li>
-                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline></svg>Property details (size, type, layout preferences)</li>
-                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline></svg>Budget range and design preferences</li>
-                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline></svg>Any other information you voluntarily provide</li>
+                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>Full name and contact details (phone number, email address)</li>
+                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>Residential or project address</li>
+                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>Property details (size, type, layout preferences)</li>
+                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>Budget range and design preferences</li>
+                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>Any other information you voluntarily provide</li>
                     </ul>
 
-                    <h3 class="font-semibold text-brand-dark text-sm uppercase tracking-wider mb-3">Automatically Collected Information</h3>
+                    <h3 class="font-semibold text-brand-dark text-sm uppercase tracking-wider mb-3">Automatically
+                        Collected Information</h3>
                     <p class="text-brand-muted leading-relaxed text-sm md:text-base mb-4">
                         When you browse our website, we may automatically collect:
                     </p>
                     <ul class="space-y-3 text-sm text-brand-muted">
-                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline></svg>Browser type and version</li>
-                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline></svg>Device type and operating system</li>
-                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline></svg>IP address and approximate location</li>
-                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline></svg>Pages visited, time spent, and referral source</li>
+                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>Browser type and version</li>
+                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>Device type and operating system</li>
+                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>IP address and approximate location</li>
+                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>Pages visited, time spent, and referral source</li>
                     </ul>
                 </div>
             </div>
@@ -136,18 +257,36 @@
                         We use the information we collect for the following purposes:
                     </p>
                     <ul class="space-y-3 text-sm text-brand-muted">
-                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline></svg>To respond to your enquiries and schedule consultations</li>
-                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline></svg>To provide, personalize, and improve our interior design services</li>
-                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline></svg>To send project updates, invoices, and service-related communications</li>
-                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline></svg>To send promotional offers and newsletters (only with your consent)</li>
-                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline></svg>To analyze website usage and improve user experience</li>
-                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline></svg>To comply with legal obligations</li>
+                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>To respond to your enquiries and schedule consultations</li>
+                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>To provide, personalize, and improve our interior design services</li>
+                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>To send project updates, invoices, and service-related communications</li>
+                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>To send promotional offers and newsletters (only with your consent)</li>
+                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>To analyze website usage and improve user experience</li>
+                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>To comply with legal obligations</li>
                     </ul>
                 </div>
             </div>
@@ -162,18 +301,29 @@
                 </div>
                 <div class="pl-14">
                     <p class="text-brand-muted leading-relaxed text-sm md:text-base mb-4">
-                        Our website may use cookies and similar tracking technologies to enhance your browsing experience. Cookies are small data files stored on your device that help us:
+                        Our website may use cookies and similar tracking technologies to enhance your browsing
+                        experience. Cookies are small data files stored on your device that help us:
                     </p>
                     <ul class="space-y-3 text-sm text-brand-muted mb-6">
-                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline></svg>Remember your preferences and settings</li>
-                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline></svg>Understand how visitors interact with our website</li>
-                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline></svg>Deliver relevant content and improve performance</li>
+                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>Remember your preferences and settings</li>
+                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>Understand how visitors interact with our website</li>
+                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>Deliver relevant content and improve performance</li>
                     </ul>
                     <p class="text-brand-muted leading-relaxed text-sm md:text-base">
-                        You can control cookie settings through your browser. Disabling cookies may affect some functionality of our website.
+                        You can control cookie settings through your browser. Disabling cookies may affect some
+                        functionality of our website.
                     </p>
                 </div>
             </div>
@@ -188,15 +338,29 @@
                 </div>
                 <div class="pl-14">
                     <p class="text-brand-muted leading-relaxed text-sm md:text-base mb-4">
-                        We do <strong class="text-brand-dark">not</strong> sell, trade, or rent your personal information to third parties. We may share your information only in the following circumstances:
+                        We do <strong class="text-brand-dark">not</strong> sell, trade, or rent your personal
+                        information to third parties. We may share your information only in the following circumstances:
                     </p>
                     <ul class="space-y-3 text-sm text-brand-muted">
-                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline></svg><span><strong class="text-brand-dark">Service Partners:</strong> With trusted vendors and contractors involved in your project (e.g., carpenters, electricians) — only information necessary to complete the work</span></li>
-                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline></svg><span><strong class="text-brand-dark">Legal Requirements:</strong> When required by law, court order, or government regulation</span></li>
-                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline></svg><span><strong class="text-brand-dark">Business Transfers:</strong> In connection with any merger, acquisition, or sale of company assets</span></li>
+                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg><span><strong class="text-brand-dark">Service Partners:</strong> With trusted vendors
+                                and contractors involved in your project (e.g., carpenters, electricians) — only
+                                information necessary to complete the work</span></li>
+                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg><span><strong class="text-brand-dark">Legal Requirements:</strong> When required by
+                                law, court order, or government regulation</span></li>
+                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg><span><strong class="text-brand-dark">Business Transfers:</strong> In connection with
+                                any merger, acquisition, or sale of company assets</span></li>
                     </ul>
                 </div>
             </div>
@@ -211,18 +375,29 @@
                 </div>
                 <div class="pl-14">
                     <p class="text-brand-muted leading-relaxed text-sm md:text-base mb-4">
-                        We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These include:
+                        We implement appropriate technical and organizational security measures to protect your personal
+                        information against unauthorized access, alteration, disclosure, or destruction. These include:
                     </p>
                     <ul class="space-y-3 text-sm text-brand-muted">
-                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline></svg>Secure data storage and encrypted communications</li>
-                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline></svg>Restricted access to personal data on a need-to-know basis</li>
-                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline></svg>Regular review of our data collection, storage, and processing practices</li>
+                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>Secure data storage and encrypted communications</li>
+                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>Restricted access to personal data on a need-to-know basis</li>
+                        <li class="flex items-start gap-3"><svg class="w-4 h-4 text-brand-orange shrink-0 mt-0.5"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>Regular review of our data collection, storage, and processing practices</li>
                     </ul>
                     <p class="text-brand-muted leading-relaxed text-sm md:text-base mt-4">
-                        However, no method of transmission over the Internet is 100% secure. While we strive to protect your data, we cannot guarantee its absolute security.
+                        However, no method of transmission over the Internet is 100% secure. While we strive to protect
+                        your data, we cannot guarantee its absolute security.
                     </p>
                 </div>
             </div>
@@ -242,23 +417,28 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div class="p-5 border border-brand-dark/5 bg-brand-warm/50">
                             <h3 class="font-semibold text-brand-dark text-sm mb-2">Right to Access</h3>
-                            <p class="text-xs text-brand-muted leading-relaxed">Request a copy of the personal data we hold about you.</p>
+                            <p class="text-xs text-brand-muted leading-relaxed">Request a copy of the personal data we
+                                hold about you.</p>
                         </div>
                         <div class="p-5 border border-brand-dark/5 bg-brand-warm/50">
                             <h3 class="font-semibold text-brand-dark text-sm mb-2">Right to Correction</h3>
-                            <p class="text-xs text-brand-muted leading-relaxed">Request correction of any inaccurate or incomplete data.</p>
+                            <p class="text-xs text-brand-muted leading-relaxed">Request correction of any inaccurate or
+                                incomplete data.</p>
                         </div>
                         <div class="p-5 border border-brand-dark/5 bg-brand-warm/50">
                             <h3 class="font-semibold text-brand-dark text-sm mb-2">Right to Deletion</h3>
-                            <p class="text-xs text-brand-muted leading-relaxed">Request deletion of your personal data from our records.</p>
+                            <p class="text-xs text-brand-muted leading-relaxed">Request deletion of your personal data
+                                from our records.</p>
                         </div>
                         <div class="p-5 border border-brand-dark/5 bg-brand-warm/50">
                             <h3 class="font-semibold text-brand-dark text-sm mb-2">Right to Opt-Out</h3>
-                            <p class="text-xs text-brand-muted leading-relaxed">Unsubscribe from marketing communications at any time.</p>
+                            <p class="text-xs text-brand-muted leading-relaxed">Unsubscribe from marketing
+                                communications at any time.</p>
                         </div>
                     </div>
                     <p class="text-brand-muted leading-relaxed text-sm md:text-base mt-4">
-                        To exercise any of these rights, please contact us at <a href="mailto:info@timberlane.co.in" class="text-brand-orange hover:underline font-medium">info@timberlane.co.in</a>.
+                        To exercise any of these rights, please contact us at <a href="mailto:info@timberlane.co.in"
+                            class="text-brand-orange hover:underline font-medium">info@timberlane.co.in</a>.
                     </p>
                 </div>
             </div>
@@ -273,7 +453,10 @@
                 </div>
                 <div class="pl-14">
                     <p class="text-brand-muted leading-relaxed text-sm md:text-base">
-                        Our website may contain links to third-party websites (e.g., social media platforms, material suppliers). We are not responsible for the privacy practices or content of those external sites. We encourage you to read the privacy policies of any linked websites before providing your personal information.
+                        Our website may contain links to third-party websites (e.g., social media platforms, material
+                        suppliers). We are not responsible for the privacy practices or content of those external sites.
+                        We encourage you to read the privacy policies of any linked websites before providing your
+                        personal information.
                     </p>
                 </div>
             </div>
@@ -288,7 +471,9 @@
                 </div>
                 <div class="pl-14">
                     <p class="text-brand-muted leading-relaxed text-sm md:text-base">
-                        Our services are not directed to individuals under the age of 18. We do not knowingly collect personal information from children. If we become aware that we have collected data from a minor, we will take steps to delete that information promptly.
+                        Our services are not directed to individuals under the age of 18. We do not knowingly collect
+                        personal information from children. If we become aware that we have collected data from a minor,
+                        we will take steps to delete that information promptly.
                     </p>
                 </div>
             </div>
@@ -303,7 +488,10 @@
                 </div>
                 <div class="pl-14">
                     <p class="text-brand-muted leading-relaxed text-sm md:text-base">
-                        We may update this Privacy Policy from time to time to reflect changes in our practices or for legal, operational, or regulatory reasons. Any updates will be posted on this page with a revised "Last Updated" date. We encourage you to review this page periodically to stay informed about how we are protecting your information.
+                        We may update this Privacy Policy from time to time to reflect changes in our practices or for
+                        legal, operational, or regulatory reasons. Any updates will be posted on this page with a
+                        revised "Last Updated" date. We encourage you to review this page periodically to stay informed
+                        about how we are protecting your information.
                     </p>
                 </div>
             </div>
@@ -318,21 +506,37 @@
                 </div>
                 <div class="pl-14">
                     <p class="text-brand-muted leading-relaxed text-sm md:text-base mb-6">
-                        If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please reach out to us:
+                        If you have any questions, concerns, or requests regarding this Privacy Policy or our data
+                        practices, please reach out to us:
                     </p>
                     <div class="bg-brand-warm p-8 border border-brand-dark/5">
                         <p class="font-serif text-xl text-brand-dark mb-4">Timberlane Interiors</p>
                         <div class="space-y-3 text-sm text-brand-muted">
                             <p class="flex items-center gap-3">
-                                <svg class="w-4 h-4 text-brand-orange shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>
-                                <a href="mailto:info@timberlane.co.in" class="hover:text-brand-orange transition-colors">info@timberlane.co.in</a>
+                                <svg class="w-4 h-4 text-brand-orange shrink-0" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="1.5">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
+                                <a href="mailto:info@timberlane.co.in"
+                                    class="hover:text-brand-orange transition-colors">info@timberlane.co.in</a>
                             </p>
                             <p class="flex items-center gap-3">
-                                <svg class="w-4 h-4 text-brand-orange shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.81 19.79 19.79 0 01.02 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" /></svg>
-                                <a href="tel:+918884651111" class="hover:text-brand-orange transition-colors">+91 8884651111</a>
+                                <svg class="w-4 h-4 text-brand-orange shrink-0" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="1.5">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.81 19.79 19.79 0 01.02 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                                </svg>
+                                <a href="tel:+918884651111" class="hover:text-brand-orange transition-colors">+91
+                                    8884651111</a>
                             </p>
                             <p class="flex items-center gap-3">
-                                <svg class="w-4 h-4 text-brand-orange shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" /></svg>
+                                <svg class="w-4 h-4 text-brand-orange shrink-0" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="1.5">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
                                 318, 2nd Floor, 9th Main Rd, 5th Block, Jayanagar, Bengaluru, Karnataka 560041
                             </p>
                         </div>
@@ -346,9 +550,13 @@
     <!-- CTA -->
     <section class="py-24 bg-brand-dark text-center">
         <div class="max-w-2xl mx-auto px-6 reveal">
-            <h2 class="font-serif text-4xl md:text-5xl text-white mb-6">Have Questions About <em class="text-brand-orange">Your Data?</em></h2>
-            <p class="text-white/60 text-sm md:text-base mb-10">We value your trust. Reach out to us and we'll be happy to address any concerns about your privacy.</p>
-            <a href="contact.html" class="inline-block bg-brand-orange text-white text-xs tracking-[0.2em] uppercase px-8 py-4 hover:bg-white hover:text-brand-dark transition-colors duration-300">Contact Us</a>
+            <h2 class="font-serif text-4xl md:text-5xl text-white mb-6">Have Questions About <em
+                    class="text-brand-orange">Your Data?</em></h2>
+            <p class="text-white/60 text-sm md:text-base mb-10">We value your trust. Reach out to us and we'll be happy
+                to address any concerns about your privacy.</p>
+            <a href="contact"
+                class="inline-block bg-brand-orange text-white text-xs tracking-[0.2em] uppercase px-8 py-4 hover:bg-white hover:text-brand-dark transition-colors duration-300">Contact
+                Us</a>
         </div>
     </section>
 
@@ -357,28 +565,35 @@
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 pb-16 border-b border-white/10">
                 <div class="lg:col-span-2">
-                    <a href="index.html" class="block font-sans font-bold text-sm tracking-widest uppercase text-brand-orange mb-6">Timberlane Interiors</a>
-                    <p class="text-sm text-white/50 leading-relaxed max-w-sm">We design the feeling of you — luxury interior design studio based in Bangalore, India. Crafting bespoke spaces since 2018.</p>
+                    <a href="/"
+                        class="block font-sans font-bold text-sm tracking-widest uppercase text-brand-orange mb-6">Timberlane
+                        Interiors</a>
+                    <p class="text-sm text-white/50 leading-relaxed max-w-sm">We design the feeling of you — luxury
+                        interior design studio based in Bangalore, India. Crafting bespoke spaces since 2018.</p>
                 </div>
                 <div>
                     <h4 class="text-[0.65rem] tracking-widest uppercase text-white/40 font-semibold mb-6">Navigate</h4>
                     <ul class="space-y-4 text-sm text-white/70">
-                        <li><a href="index.html" class="hover:text-brand-orange transition-colors">Home</a></li>
-                        <li><a href="about.html" class="hover:text-brand-orange transition-colors">About</a></li>
-                        <li><a href="services.html" class="hover:text-brand-orange transition-colors">Services</a></li>
-                        <li><a href="portfolio.html" class="hover:text-brand-orange transition-colors">Portfolio</a></li>
-                        <li><a href="blog.html" class="hover:text-brand-orange transition-colors">Blog</a></li>
-                        <li><a href="contact.html" class="hover:text-brand-orange transition-colors">Contact</a></li>
+                        <li><a href="/" class="hover:text-brand-orange transition-colors">Home</a></li>
+                        <li><a href="about" class="hover:text-brand-orange transition-colors">About</a></li>
+                        <li><a href="services" class="hover:text-brand-orange transition-colors">Services</a></li>
+                        <li><a href="portfolio" class="hover:text-brand-orange transition-colors">Portfolio</a></li>
+                        <li><a href="blog" class="hover:text-brand-orange transition-colors">Blog</a></li>
+                        <li><a href="contact" class="hover:text-brand-orange transition-colors">Contact</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-[0.65rem] tracking-widest uppercase text-white/40 font-semibold mb-6">Services</h4>
                     <ul class="space-y-4 text-sm text-white/70">
-                        <li><a href="services.html" class="hover:text-brand-orange transition-colors">Full Home Design</a></li>
-                        <li><a href="services.html" class="hover:text-brand-orange transition-colors">Kitchen Interiors</a></li>
-                        <li><a href="services.html" class="hover:text-brand-orange transition-colors">Bedroom Design</a></li>
-                        <li><a href="services.html" class="hover:text-brand-orange transition-colors">Commercial Spaces</a></li>
-                        <li><a href="services.html" class="hover:text-brand-orange transition-colors">Vastu Consulting</a></li>
+                        <li><a href="services" class="hover:text-brand-orange transition-colors">Full Home Design</a>
+                        </li>
+                        <li><a href="services" class="hover:text-brand-orange transition-colors">Kitchen Interiors</a>
+                        </li>
+                        <li><a href="services" class="hover:text-brand-orange transition-colors">Bedroom Design</a></li>
+                        <li><a href="services" class="hover:text-brand-orange transition-colors">Commercial Spaces</a>
+                        </li>
+                        <li><a href="services" class="hover:text-brand-orange transition-colors">Vastu Consulting</a>
+                        </li>
                     </ul>
                 </div>
                 <div>
@@ -386,21 +601,28 @@
                     <ul class="space-y-4 text-sm text-white/70">
                         <li><a href="#" class="hover:text-brand-orange transition-colors">Instagram</a></li>
                         <li><a href="#" class="hover:text-brand-orange transition-colors">Houzz</a></li>
-                        <li><a href="https://wa.me/918884651111" class="hover:text-brand-orange transition-colors">WhatsApp</a></li>
-                        <li><a href="mailto:info@timberlane.co.in" class="hover:text-brand-orange transition-colors">Email Us</a></li>
+                        <li><a href="https://wa.me/918884651111"
+                                class="hover:text-brand-orange transition-colors">WhatsApp</a></li>
+                        <li><a href="mailto:info@timberlane.co.in"
+                                class="hover:text-brand-orange transition-colors">Email Us</a></li>
                     </ul>
                 </div>
             </div>
             <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 text-xs text-white/30">
                 <p>&copy; 2026 Timberlane Interiors. All rights reserved.</p>
-                <a href="privacy-policy.html" class="text-white/30 hover:text-brand-orange transition-colors">Privacy Policy</a>
+                <a href="privacy-policy" class="text-white/30 hover:text-brand-orange transition-colors">Privacy
+                    Policy</a>
                 <p class="tracking-widest uppercase">We Design The Feeling of You</p>
             </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/918884651111" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" class="fixed bottom-6 right-6 z-40 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform duration-300">
-        <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
+    <a href="https://wa.me/918884651111" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
+        class="fixed bottom-6 right-6 z-40 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform duration-300">
+        <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
     </a>
 
     <script>
@@ -408,9 +630,9 @@
             window.addEventListener('scroll', () => {
                 const scrollY = window.scrollY;
                 const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-                if(scrollHeight > 0) document.getElementById('prog').style.width = ((scrollY / scrollHeight) * 100) + '%';
+                if (scrollHeight > 0) document.getElementById('prog').style.width = ((scrollY / scrollHeight) * 100) + '%';
                 const nav = document.getElementById('nav');
-                scrollY > 60 ? nav.classList.add('solid') : nav.classList.remove('solid');
+                nav.classList.add('solid');
                 document.querySelectorAll('.reveal').forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight - 80) el.classList.add('in'); });
             });
             window.dispatchEvent(new Event('scroll'));
@@ -419,5 +641,7 @@
             drawer.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { hamBtn.classList.remove('active'); drawer.classList.remove('open'); document.body.classList.remove('overflow-hidden'); }); });
         });
     </script>
+    <script src="main.js"></script>
 </body>
+
 </html>
