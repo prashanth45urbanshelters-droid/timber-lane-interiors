@@ -12,6 +12,7 @@ RewriteRule ^index$ / [R=301,L]
 # 2. Redirect /page.html to /page
 # This ensures that any old .html links from external sources or search engines are redirected.
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^.]+)\.html\ HTTP/ [NC]
+RewriteRule ^blog-post-1\.html$ /blog/the-evolution-of-luxury-sustainable-materials [R=301,L]
 RewriteRule ^([^.]+)\.html$ /$1 [R=301,L]
 
 # 3. Internally serve /page as /page.html

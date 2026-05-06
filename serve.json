@@ -2,6 +2,9 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/", "destination": "/index.html" }
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/blog", "destination": "/blog/index.html" },
+    { "source": "/interior-design-trends-bangalore-2026", "destination": "/blog/interior-design-trends-bangalore-2026.html" },
+    { "source": "/the-evolution-of-luxury-sustainable-materials", "destination": "/blog/the-evolution-of-luxury-sustainable-materials.html" }
   ]
 }
