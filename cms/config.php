@@ -12,7 +12,7 @@ define('TL_CMS_DEFAULT_IMAGE', '../assets/livingroom-1.png');
  * Set TIMBERLANE_CMS_PASSWORD_HASH on the server to a sha256 hash of the real
  * password. Fallback login while setting up: Timberlane@2026
  */
-define('TL_CMS_PASSWORD_HASH', getenv('TIMBERLANE_CMS_PASSWORD_HASH') ?: 'd6f45417e37b50fc1f399e311788dff78dadd9bba37f606a1289d175f6d86f2e');
+define('TL_CMS_PASSWORD_HASH', getenv('TIMBERLANE_CMS_PASSWORD_HASH') ?: 'bea7e48ba22727f62109924c9034243ab64489612134a56aed58ca6b3564a9af');
 
 session_name('timberlane_cms');
 session_start();
